@@ -474,6 +474,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4409342071901024, guid: 6a7d112f52bf6614380f9897a028c670, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -506,6 +511,48 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4519245617641342, guid: 4e0a91eca3160ad419302f1925d0fcda,
+        type: 2}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 4105933204804464, guid: 4e0a91eca3160ad419302f1925d0fcda,
+        type: 2}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 4095858176834952, guid: 4e0a91eca3160ad419302f1925d0fcda,
+        type: 2}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 4095858176834952, guid: 4e0a91eca3160ad419302f1925d0fcda,
+        type: 2}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 4095858176834952, guid: 4e0a91eca3160ad419302f1925d0fcda,
+        type: 2}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waypoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 4095858176834952, guid: 4e0a91eca3160ad419302f1925d0fcda,
+        type: 2}
+    - target: {fileID: 114638948455054522, guid: 6a7d112f52bf6614380f9897a028c670,
+        type: 2}
+      propertyPath: waveConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 79a769fe3e592c7428b1d5a73a2cfe84,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a7d112f52bf6614380f9897a028c670, type: 2}
   m_IsPrefabAsset: 0
