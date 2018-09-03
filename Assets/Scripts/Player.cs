@@ -45,8 +45,7 @@ public class Player : MonoBehaviour {
     {
         while(true)
         {
-            var lazer = Instantiate(playerLazer, transform.position, Quaternion.identity) as GameObject;
-            Destroy(lazer, 1);
+            Instantiate(playerLazer, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(periodOfContinuousFiring);
         }
     }

@@ -12,9 +12,9 @@ public class Lazer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         var newPosition = transform.position.y + lazerSpeed;
-
-        transform.position = new Vector2(transform.position.x, transform.position.y + lazerSpeed);
+        transform.position = new Vector2(transform.position.x, newPosition);
 	}
 }
