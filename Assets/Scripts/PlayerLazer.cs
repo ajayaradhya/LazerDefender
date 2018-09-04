@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lazer : MonoBehaviour {
+public class PlayerLazer : MonoBehaviour {
 
     [SerializeField] float lazerSpeed = 2f;
 
@@ -14,7 +14,7 @@ public class Lazer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        var newPosition = transform.position.y + lazerSpeed;
+        var newPosition = transform.position.y + lazerSpeed * Time.deltaTime;
         transform.position = new Vector2(transform.position.x, newPosition);
 	}
 }

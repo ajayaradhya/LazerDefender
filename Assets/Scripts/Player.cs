@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    [Header("Player Movements")]
     [SerializeField] float moveSpeed = 10;
     [SerializeField] float padding = 1f;
     [SerializeField] float paddingTop = 3f;
 
+    [Header("Lazer Related")]
     [SerializeField] GameObject playerLazer;
     [SerializeField] float periodOfContinuousFiring = 0.1f;
+
+    [Header("Player Health")]
+    [SerializeField] int health = 200;
 
 
     float xMin, xMax, yMin, yMax;
@@ -73,5 +78,18 @@ public class Player : MonoBehaviour {
 
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - paddingTop;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag != "Lazer")
+        {
+            health -= collider.GetComponent<DamageDealer>().GetDamage();
+            if(health <= 0)
+            {
+                Debug.Log("You die!");
+                Destroy(gameObject);
+            }
+        }
     }
 }
