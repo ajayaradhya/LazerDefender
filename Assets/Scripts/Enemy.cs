@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     [SerializeField] GameObject lazerPrefab;
+    [SerializeField] GameObject blastEffectPrefab;
 
     [SerializeField] float health = 100f;
     [SerializeField] float shotCounter;
@@ -55,6 +56,8 @@ public class Enemy : MonoBehaviour {
         if (health <= 0)
         {
             Destroy(gameObject);
+            var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(blast, 1);
         }
     }
 }

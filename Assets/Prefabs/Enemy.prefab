@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lazerPrefab: {fileID: 1466014627081910, guid: 79616db6ee2aed94c80e739d0de4ddb2,
     type: 2}
+  blastEffectPrefab: {fileID: 1406363624822292, guid: a7f163f33833eea469e1403112ae93b6,
+    type: 2}
   health: 100
   shotCounter: 0
   minTimeBetweenShots: 0.2
