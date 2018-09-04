@@ -41,11 +41,8 @@ public class Enemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.tag == "Lazer")
-        {
-            DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
-            ProcessDamage(damageDealer);
-        }
+        DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
+        ProcessDamage(damageDealer);
         
     }
 

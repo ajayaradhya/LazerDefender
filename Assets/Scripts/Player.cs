@@ -82,14 +82,11 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag != "Lazer")
+        health -= collider.GetComponent<DamageDealer>().GetDamage();
+        if(health <= 0)
         {
-            health -= collider.GetComponent<DamageDealer>().GetDamage();
-            if(health <= 0)
-            {
-                Debug.Log("You die!");
-                Destroy(gameObject);
-            }
+            Debug.Log("You die!");
+            Destroy(gameObject);
         }
     }
 }
