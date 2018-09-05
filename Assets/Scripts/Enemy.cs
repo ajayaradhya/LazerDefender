@@ -7,14 +7,16 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] GameObject lazerPrefab;
     [SerializeField] GameObject blastEffectPrefab;
+    [SerializeField] AudioClip blastAudio;
+    [SerializeField] [Range(0, 1)] float blastSoundVolume = 0.75f;
 
     [SerializeField] float health = 100f;
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimebetweenShots = 3f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimebetweenShots);
 	}
 	
@@ -54,9 +56,15 @@ public class Enemy : MonoBehaviour {
 
         if (health <= 0)
         {
-            Destroy(gameObject);
-            var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);
-            Destroy(blast, 1);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
+        Destroy(gameObject);
+        var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(blast, 1);
     }
 }

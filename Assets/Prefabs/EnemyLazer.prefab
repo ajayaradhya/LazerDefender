@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lazerSpeed: 10
+  enemyLazerAudio: {fileID: 8300000, guid: 37afd7cf7ebcea64d922b45e03ce1e55, type: 3}
 --- !u!114 &114535137614375712
 MonoBehaviour:
   m_ObjectHideFlags: 1
