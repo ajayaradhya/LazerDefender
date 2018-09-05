@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
+
+    [SerializeField] float delayBeforeScreenLoad = 2f;
 
     public void LoadStartMenu()
     {
@@ -12,7 +15,7 @@ public class Level : MonoBehaviour {
 
     public void LoadGameOverScene()
     {
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(DelayBeforeLoadingScene("GameOver"));
     }
 
     public void LoadGameScene()
@@ -23,6 +26,12 @@ public class Level : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator DelayBeforeLoadingScene(string sceneName)
+    {
+        yield return new WaitForSeconds(delayBeforeScreenLoad);
+        SceneManager.LoadScene(sceneName);
     }
 
 }

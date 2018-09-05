@@ -381,6 +381,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ca216641f1d6f48990025ef6e87e11, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &748580554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1467219536343220, guid: 57ca216641f1d6f48990025ef6e87e11,
+    type: 2}
+  m_PrefabInternal: {fileID: 748580553}
 --- !u!1001 &923604843
 Prefab:
   m_ObjectHideFlags: 0
@@ -546,6 +551,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114014117769410220, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: levelHandler
+      value: 
+      objectReference: {fileID: 748580554}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0

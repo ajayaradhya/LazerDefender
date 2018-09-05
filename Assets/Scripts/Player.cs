@@ -14,8 +14,13 @@ public class Player : MonoBehaviour {
     [SerializeField] GameObject playerLazer;
     [SerializeField] float periodOfContinuousFiring = 0.1f;
 
-    [Header("Player Health")]
+    [Header("Player Health and Death")]
     [SerializeField] int health = 200;
+    [SerializeField] AudioClip playerDeathAudio;
+    [SerializeField] [Range(0, 1)] float soundVolume = 0.75f;
+
+    [Header("Level")]
+    [SerializeField] GameObject levelHandler;
 
 
     float xMin, xMax, yMin, yMax;
@@ -82,10 +87,15 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        health -= collider.GetComponent<DamageDealer>().GetDamage();
-        if(health <= 0)
+        var damageDealer = collider.GetComponent<DamageDealer>();
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (health <= 0)
         {
+            AudioSource.PlayClipAtPoint(playerDeathAudio, Camera.main.transform.position, soundVolume);
             Destroy(gameObject);
+
+            levelHandler.GetComponent<Level>().LoadGameOverScene();
         }
     }
 }
