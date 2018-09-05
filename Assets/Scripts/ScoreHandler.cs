@@ -14,14 +14,15 @@ public class ScoreHandler : MonoBehaviour
     {
         totalScore += scoreToAdd;
         scoreText.text = totalScore.ToString();
-
-        Debug.Log("score updated " + scoreText.text);
     }
 
     public void UpdateHealth(int currentHealth)
     {
-        healthText.text = currentHealth.ToString();
-        Debug.Log("health updated " + healthText.text);
+        if(healthText != null)
+        {
+            healthText.text = currentHealth.ToString();
+        }
+        
     }
 
 }

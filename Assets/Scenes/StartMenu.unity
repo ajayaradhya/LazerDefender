@@ -1127,6 +1127,11 @@ Prefab:
       propertyPath: periodOfContinuousFiring
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 114014117769410220, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0
@@ -1146,6 +1151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e3afb384f0bda4d879f18f9c81f032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!1001 &1987514147
 Prefab:
   m_ObjectHideFlags: 0
