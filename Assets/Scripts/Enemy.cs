@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimebetweenShots = 3f;
 
+    [SerializeField] int scoreGainedByPlayerAfterEnemyDeath = 100;
+
     // Use this for initialization
     void Start () {
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimebetweenShots);
@@ -62,6 +64,7 @@ public class Enemy : MonoBehaviour {
 
     private void Die()
     {
+        FindObjectOfType<ScoreHandler>().UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
         Destroy(gameObject);
         var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);

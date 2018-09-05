@@ -29,7 +29,12 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
         SetUpMoveBoundaries();
-	}
+        var scoreHandler = FindObjectOfType<ScoreHandler>();
+        if(scoreHandler != null)
+        {
+            scoreHandler.UpdateHealth(health);
+        }
+    }
 
     // Update is called once per frame
     void Update ()
@@ -89,6 +94,9 @@ public class Player : MonoBehaviour {
     {
         var damageDealer = collider.GetComponent<DamageDealer>();
         health -= damageDealer.GetDamage();
+
+        FindObjectOfType<ScoreHandler>().UpdateHealth(health);
+
         damageDealer.Hit();
         if (health <= 0)
         {
