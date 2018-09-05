@@ -85,7 +85,6 @@ public class Player : MonoBehaviour {
         health -= collider.GetComponent<DamageDealer>().GetDamage();
         if(health <= 0)
         {
-            Debug.Log("You die!");
             Destroy(gameObject);
         }
     }
