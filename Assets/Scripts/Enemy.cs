@@ -36,8 +36,7 @@ public class Enemy : MonoBehaviour {
 
     private void Fire()
     {
-        var lazer = Instantiate(lazerPrefab, transform.position, Quaternion.identity);
-        Destroy(lazer, 2f);
+        Instantiate(lazerPrefab, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
