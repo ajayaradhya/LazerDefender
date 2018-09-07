@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
 
-    [SerializeField] float delayBeforeScreenLoad = 2f;
+    [SerializeField] float delayBeforeScreenLoad = 1f;
 
     public void LoadStartMenu()
     {
@@ -32,6 +32,7 @@ public class Level : MonoBehaviour {
     {
         yield return new WaitForSeconds(delayBeforeScreenLoad);
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1f;
     }
 
 }

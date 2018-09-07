@@ -18,6 +18,8 @@ public class Player : MonoBehaviour {
     [SerializeField] int health = 200;
     [SerializeField] AudioClip playerDeathAudio;
     [SerializeField] [Range(0, 1)] float soundVolume = 0.75f;
+    [SerializeField] GameObject playerBlastPrefab;
+    [SerializeField] float afterDeathTimeScale = 0.5f;
 
     [Header("Level")]
     [SerializeField] GameObject levelHandler;
@@ -110,10 +112,16 @@ public class Player : MonoBehaviour {
         damageDealer.Hit();
         if (health <= 0)
         {
-            AudioSource.PlayClipAtPoint(playerDeathAudio, Camera.main.transform.position, soundVolume);
-            Destroy(gameObject);
-
-            levelHandler.GetComponent<Level>().LoadGameOverScene();
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Time.timeScale = afterDeathTimeScale;
+        AudioSource.PlayClipAtPoint(playerDeathAudio, Camera.main.transform.position, soundVolume);
+        Instantiate(playerBlastPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        levelHandler.GetComponent<Level>().LoadGameOverScene();
     }
 }
