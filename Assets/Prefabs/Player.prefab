@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0f0e73153391440b95e82d71635a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 15
   padding: 1
   paddingTop: 3
   playerLazer: {fileID: 1502395440926648, guid: 19a0b4a1f39c76746991563af461feda,
     type: 2}
-  periodOfContinuousFiring: 0.1
+  periodOfContinuousFiring: 0.05
   health: 1000
   playerDeathAudio: {fileID: 8300000, guid: 7aebbe08dd5f6504b872058779835bc3, type: 3}
   soundVolume: 0.75
