@@ -113,30 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &94733302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1241453575145066, guid: 4a49e9e51e7d7bb45a0ef6d3e5e0737b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1568720752}
 --- !u!114 &94733304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114389248383075120, guid: 4a49e9e51e7d7bb45a0ef6d3e5e0737b,
     type: 2}
   m_PrefabInternal: {fileID: 1568720752}
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &94733305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 94733302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c51d613d1e99354a963ca259f68b461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curretHealth: 100
-  maxHealth: 100
 --- !u!1001 &196865190
 Prefab:
   m_ObjectHideFlags: 0
@@ -835,11 +817,6 @@ Prefab:
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 748580554}
-    - target: {fileID: 114014117769410220, guid: 8df217453c63de74abb1fdad323b1175,
-        type: 2}
-      propertyPath: maxHealth
-      value: 2000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0

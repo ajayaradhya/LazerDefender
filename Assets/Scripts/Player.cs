@@ -18,10 +18,13 @@ public class Player : MonoBehaviour {
     [Header("Player Health and Death")]
     [SerializeField] float maxHealth = 200;
     [SerializeField] TMPro.TextMeshProUGUI healthText;
+
     [SerializeField] AudioClip playerDeathAudio;
     [SerializeField] [Range(0, 1)] float soundVolume = 0.75f;
+
     [SerializeField] GameObject playerBlastPrefab;
     [SerializeField] float afterDeathTimeScale = 0.5f;
+
     [SerializeField] Slider playerHealthBar;
 
     [Header("Level")]
@@ -42,8 +45,6 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        //MoveHorizontal();
-        //MoveVertical();
         Move();
         Fire();
     }
@@ -124,8 +125,6 @@ public class Player : MonoBehaviour {
     private void UpdatePlayerHealth()
     {
         var currentHealthPercentage = CalculatePercentage(currentHealth, maxHealth);
-
-        Debug.Log(currentHealthPercentage);
 
         if(playerHealthBar != null)
         {
