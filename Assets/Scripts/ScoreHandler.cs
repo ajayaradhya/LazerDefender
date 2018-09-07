@@ -3,7 +3,6 @@
 public class ScoreHandler : MonoBehaviour
 {
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
-    [SerializeField] TMPro.TextMeshProUGUI healthText;
     [SerializeField] TMPro.TextMeshProUGUI finalScoreText;
 
     private int totalScore = 0;
@@ -24,20 +23,6 @@ public class ScoreHandler : MonoBehaviour
         PlayerPrefs.SetInt("Score", totalScore);
     }
 
-    public void UpdateHealth(int currentHealth)
-    {
-        if(healthText != null)
-        {
-            int currentHealthInUI;
-            int.TryParse(healthText.text, out currentHealthInUI);
-
-            if(currentHealthInUI >= 0)
-            {
-                healthText.text = currentHealth.ToString();
-            }
-            
-        }
-        
-    }
+    
 
 }

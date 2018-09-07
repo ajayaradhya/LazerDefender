@@ -105,12 +105,14 @@ MonoBehaviour:
   playerLazer: {fileID: 1502395440926648, guid: 19a0b4a1f39c76746991563af461feda,
     type: 2}
   periodOfContinuousFiring: 0.05
-  health: 1000
+  maxHealth: 2000
+  healthText: {fileID: 0}
   playerDeathAudio: {fileID: 8300000, guid: 7aebbe08dd5f6504b872058779835bc3, type: 3}
   soundVolume: 0.75
   playerBlastPrefab: {fileID: 1406363624822292, guid: 01136d360d53f3a4e9c6df0dbce0d1d5,
     type: 2}
   afterDeathTimeScale: 0.3
+  playerHealthBar: {fileID: 0}
   levelHandler: {fileID: 0}
 --- !u!212 &212930660642163242
 SpriteRenderer:

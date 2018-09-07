@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -15,11 +16,13 @@ public class Player : MonoBehaviour {
     [SerializeField] float periodOfContinuousFiring = 0.1f;
 
     [Header("Player Health and Death")]
-    [SerializeField] int health = 200;
+    [SerializeField] float maxHealth = 200;
+    [SerializeField] TMPro.TextMeshProUGUI healthText;
     [SerializeField] AudioClip playerDeathAudio;
     [SerializeField] [Range(0, 1)] float soundVolume = 0.75f;
     [SerializeField] GameObject playerBlastPrefab;
     [SerializeField] float afterDeathTimeScale = 0.5f;
+    [SerializeField] Slider playerHealthBar;
 
     [Header("Level")]
     [SerializeField] GameObject levelHandler;
@@ -27,15 +30,13 @@ public class Player : MonoBehaviour {
 
     float xMin, xMax, yMin, yMax;
     Coroutine fireCoroutine;
+    float currentHealth;
 
     // Use this for initialization
     void Start () {
+        currentHealth = maxHealth;
         SetUpMoveBoundaries();
-        var scoreHandler = FindObjectOfType<ScoreHandler>();
-        if(scoreHandler != null)
-        {
-            scoreHandler.UpdateHealth(health);
-        }
+        UpdatePlayerHealth();
     }
 
     // Update is called once per frame
@@ -45,6 +46,16 @@ public class Player : MonoBehaviour {
         //MoveVertical();
         Move();
         Fire();
+    }
+
+    private float CalculatePercentage(float current, float max)
+    {
+        if(current <= 0)
+        {
+            current = 0;
+        }
+
+        return (current / max) * 100;
     }
 
     private void Move()
@@ -105,12 +116,28 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider)
     {
         var damageDealer = collider.GetComponent<DamageDealer>();
-        health -= damageDealer.GetDamage();
-
-        FindObjectOfType<ScoreHandler>().UpdateHealth(health);
-
+        currentHealth -= damageDealer.GetDamage();
+        UpdatePlayerHealth();
         damageDealer.Hit();
-        if (health <= 0)
+    }
+
+    private void UpdatePlayerHealth()
+    {
+        var currentHealthPercentage = CalculatePercentage(currentHealth, maxHealth);
+
+        Debug.Log(currentHealthPercentage);
+
+        if(playerHealthBar != null)
+        {
+            playerHealthBar.value = currentHealthPercentage / 100;
+        }
+
+        if (healthText != null)
+        {
+            healthText.text = currentHealthPercentage.ToString();
+        }
+
+        if(currentHealth <= 0)
         {
             Die();
         }
