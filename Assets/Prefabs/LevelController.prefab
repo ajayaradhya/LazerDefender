@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4643768181019902}
   - component: {fileID: 114431823234204886}
+  - component: {fileID: 114206230438399346}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114206230438399346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467219536343220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e3afb384f0bda4d879f18f9c81f032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!114 &114431823234204886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,3 +65,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d66add136396464e9b856d8b01a6aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayBeforeScreenLoad: 2

@@ -39,9 +39,19 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        MoveHorizontal();
-        MoveVertical();
+        //MoveHorizontal();
+        //MoveVertical();
+        Move();
         Fire();
+    }
+
+    private void Move()
+    {
+        var currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var newXPos = Mathf.Clamp(currentMousePosition.x, xMin, xMax);
+        var newYPos = Mathf.Clamp(currentMousePosition.y, yMin, yMax);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(newXPos, newYPos), moveSpeed * Time.deltaTime);
+
     }
 
     private void Fire()

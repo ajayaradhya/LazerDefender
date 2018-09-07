@@ -98,7 +98,7 @@ MonoBehaviour:
     type: 2}
   blastAudio: {fileID: 8300000, guid: 7da2aedcb669b2a4496a20b836c13337, type: 3}
   blastSoundVolume: 0.75
-  health: 100
+  health: 400
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimebetweenShots: 3
