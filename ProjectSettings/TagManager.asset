@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lazer
+  - Canvas
   layers:
   - Default
   - TransparentFX

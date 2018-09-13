@@ -96,12 +96,15 @@ MonoBehaviour:
     type: 2}
   blastEffectPrefab: {fileID: 1406363624822292, guid: a7f163f33833eea469e1403112ae93b6,
     type: 2}
+  enemyHealthBarPrefab: {fileID: 1895968421935622, guid: b61e9b45d5e857b4096c9b362c2611ec,
+    type: 2}
   blastAudio: {fileID: 8300000, guid: 7da2aedcb669b2a4496a20b836c13337, type: 3}
   blastSoundVolume: 0.75
   health: 200
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimebetweenShots: 3
+  healthBarOffsetY: 0.4
   scoreGainedByPlayerAfterEnemyDeath: 100
 --- !u!114 &114512004334808622
 MonoBehaviour:
