@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708415561f4464448a549a0eec2fe63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lazerPrefab: {fileID: 1466014627081910, guid: 79616db6ee2aed94c80e739d0de4ddb2,
+  lazerPrefab: {fileID: 1205126438722624, guid: db1daea54527b3547bc3c6f15c96e054,
     type: 2}
   blastEffectPrefab: {fileID: 1406363624822292, guid: a7f163f33833eea469e1403112ae93b6,
     type: 2}
