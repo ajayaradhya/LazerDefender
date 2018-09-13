@@ -1218,7 +1218,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114431823234204886, guid: 57ca216641f1d6f48990025ef6e87e11,
           type: 2}
-        m_MethodName: LoadStartMenu
+        m_MethodName: LoadFirstLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

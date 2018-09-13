@@ -29,18 +29,23 @@ public class LevelController : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log("Level Controller setup done..");
         allScenes = GetAllScenes();
-        Debug.Log("Number of scenes found : " + allScenes.Length);
         currentSceneIndex = 0;
-        Debug.Log("Start " + currentSceneIndex);
-        //start scene, level1, level2,...., success scene, gameover scene
     }
 
     public void LoadStartMenu()
     {
+        LevelController.instance.LoadStartMenuByInstance();
+    }
+
+    public void LoadFirstLevel()
+    {
+        LevelController.instance.LoadFirstLevelByInstance();
+    }
+
+    private void LoadStartMenuByInstance()
+    {
         currentSceneIndex = 0;
-        Debug.Log("LoadStartMenu " + currentSceneIndex);
         ScoreHandler.instance.ResetScores();
 
         if(allScenes == null && allScenes.Length ==0)
@@ -51,26 +56,24 @@ public class LevelController : MonoBehaviour {
         SceneManager.LoadScene(allScenes[0]);
     }
 
-    public void LoadFirstLevel()
-    {
-        LevelController.instance.LoadFirstLevelByInstance();
-    }
-
     private void LoadFirstLevelByInstance()
     {
         currentSceneIndex = 1;
-        Debug.Log("LoadFirstLevel : " + allScenes.Length);
+        ScoreHandler.instance.ResetScores();
         SceneManager.LoadScene(allScenes[currentSceneIndex]);
     }
 
     public void LoadNextLevel()
     {
-        Debug.Log("LoadNextLevel : " + currentSceneIndex);
         try
         {
             currentSceneIndex++;
 
-            Debug.Log("Loading scene " + allScenes[currentSceneIndex]);
+            if(currentSceneIndex > allScenes.Length - 2)
+            {
+                currentSceneIndex = allScenes.Length - 2;
+            }
+            
             SceneManager.LoadScene(allScenes[currentSceneIndex]);
         }
         catch (Exception ex)
@@ -80,14 +83,12 @@ public class LevelController : MonoBehaviour {
         }
         finally
         {
-            Debug.Log("LoadNextLevel : " + currentSceneIndex);
         }
     }
 
     public void LoadGameOverScene()
     {
         currentSceneIndex = allScenes.Length - 1;
-        Debug.Log("LoadGameOverScene " + currentSceneIndex);
         StartCoroutine(DelayBeforeLoadingScene(allScenes[currentSceneIndex]));
     }
 
