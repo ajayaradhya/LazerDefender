@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour {
 
     [SerializeField] float delayBeforeScreenLoad = 1f;
-
     public static LevelController instance = null;
     [SerializeField] int currentSceneIndex = 0;
 
@@ -92,8 +91,6 @@ public class LevelController : MonoBehaviour {
         StartCoroutine(DelayBeforeLoadingScene(allScenes[currentSceneIndex]));
     }
 
-    
-
     public void QuitGame()
     {
         ScoreHandler.instance.ResetScores();
@@ -106,6 +103,12 @@ public class LevelController : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
         Time.timeScale = 1f;
     }
+
+    IEnumerator LevelCompletionTransition()
+    {
+
+    }
+
 
     private string[] GetAllScenes()
     {

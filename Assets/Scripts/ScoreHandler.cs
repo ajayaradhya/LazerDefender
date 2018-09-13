@@ -21,8 +21,7 @@ public class ScoreHandler : MonoBehaviour
     }
 
     public void Start()
-    {
-        Debug.Log("Score Controller setup done..");  
+    { 
     }
 
     void Update()
