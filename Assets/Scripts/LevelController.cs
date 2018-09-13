@@ -9,6 +9,9 @@ public class LevelController : MonoBehaviour {
     [SerializeField] float delayBeforeScreenLoad = 1f;
 
     public static LevelController instance = null;
+    [SerializeField] int currentSceneIndex = 0;
+
+    [SerializeField] string[] allScenes;
 
     void Awake()
     {
@@ -24,41 +27,71 @@ public class LevelController : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    private int currentLevel = 1;
-
     void Start()
     {
         Debug.Log("Level Controller setup done..");
+        allScenes = GetAllScenes();
+        Debug.Log("Number of scenes found : " + allScenes.Length);
+        currentSceneIndex = 0;
+        Debug.Log("Start " + currentSceneIndex);
+        //start scene, level1, level2,...., success scene, gameover scene
     }
 
     public void LoadStartMenu()
     {
-        currentLevel = 1;
+        currentSceneIndex = 0;
+        Debug.Log("LoadStartMenu " + currentSceneIndex);
         ScoreHandler.instance.ResetScores();
-        SceneManager.LoadScene("StartMenu");
+
+        if(allScenes == null && allScenes.Length ==0)
+        {
+            allScenes = GetAllScenes();
+        }
+        
+        SceneManager.LoadScene(allScenes[0]);
     }
 
-    public void LoadGameOverScene()
+    public void LoadFirstLevel()
     {
-        currentLevel = 1;
-        StartCoroutine(DelayBeforeLoadingScene("GameOver"));
+        LevelController.instance.LoadFirstLevelByInstance();
+    }
+
+    private void LoadFirstLevelByInstance()
+    {
+        currentSceneIndex = 1;
+        Debug.Log("LoadFirstLevel : " + allScenes.Length);
+        SceneManager.LoadScene(allScenes[currentSceneIndex]);
     }
 
     public void LoadNextLevel()
     {
+        Debug.Log("LoadNextLevel : " + currentSceneIndex);
         try
         {
-            currentLevel++;
-            Debug.Log("loading scene " + currentLevel);
-            SceneManager.LoadScene("Level " + currentLevel);
+            currentSceneIndex++;
+
+            Debug.Log("Loading scene " + allScenes[currentSceneIndex]);
+            SceneManager.LoadScene(allScenes[currentSceneIndex]);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
-            currentLevel--;
+            currentSceneIndex--;
             throw ex;
         }
-        
+        finally
+        {
+            Debug.Log("LoadNextLevel : " + currentSceneIndex);
+        }
     }
+
+    public void LoadGameOverScene()
+    {
+        currentSceneIndex = allScenes.Length - 1;
+        Debug.Log("LoadGameOverScene " + currentSceneIndex);
+        StartCoroutine(DelayBeforeLoadingScene(allScenes[currentSceneIndex]));
+    }
+
+    
 
     public void QuitGame()
     {
@@ -71,5 +104,22 @@ public class LevelController : MonoBehaviour {
         yield return new WaitForSeconds(delayBeforeScreenLoad);
         SceneManager.LoadScene(sceneName);
         Time.timeScale = 1f;
+    }
+
+    private string[] GetAllScenes()
+    {
+        int sceneCount = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;
+        string[] scenes = new string[sceneCount];
+        for (int i = 0; i < sceneCount; i++)
+        {
+            scenes[i] = System.IO.Path.GetFileNameWithoutExtension(UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i));
+        }
+
+        return scenes;
+    }
+
+    public string GetCurrentLevel()
+    {
+        return allScenes[currentSceneIndex];
     }
 }

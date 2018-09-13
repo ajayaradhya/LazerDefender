@@ -36,6 +36,7 @@ public class EnemyGroupSpawner : MonoBehaviour {
     {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         {
+            Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel());
             LevelController.instance.LoadNextLevel();
         }
     }

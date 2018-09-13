@@ -52,3 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayBeforeScreenLoad: 2
+  currentSceneIndex: 0
+  allScenes: []
