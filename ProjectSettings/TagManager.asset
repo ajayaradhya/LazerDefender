@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lazer
+  - Canvas
+  - Enemy
+  - CurrentScore
+  - FinalScore
   layers:
   - Default
   - TransparentFX

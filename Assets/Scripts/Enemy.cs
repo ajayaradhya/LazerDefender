@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
     [SerializeField] GameObject lazerPrefab;
     [SerializeField] GameObject blastEffectPrefab;
+    [SerializeField] GameObject enemyHealthBarPrefab;
     [SerializeField] AudioClip blastAudio;
     [SerializeField] [Range(0, 1)] float blastSoundVolume = 0.75f;
 
@@ -14,19 +16,47 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimebetweenShots = 3f;
+    [SerializeField] float healthBarOffsetY = 2f;
 
     [SerializeField] int scoreGainedByPlayerAfterEnemyDeath = 100;
 
+    private GameObject healthBar;
+    private float initialHealth;
+
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        initialHealth = health;
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimebetweenShots);
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        InstantiateHealthBar();
+
+    }
+
+    private void InstantiateHealthBar()
+    {
+        var positionOfHealthBar = new Vector2(transform.position.x, transform.position.y + healthBarOffsetY);
+        var healthBarPos = Camera.main.WorldToScreenPoint(positionOfHealthBar);
+        if (enemyHealthBarPrefab != null)
+        {
+            healthBar = Instantiate(enemyHealthBarPrefab, healthBarPos, Quaternion.identity);
+            healthBar.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+        }
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         CountDownAndShoot();
-	}
+
+        if(healthBar != null)
+        {
+            var positionOfHealthBar = new Vector2(transform.position.x, transform.position.y + healthBarOffsetY);
+            var healthBarPos = Camera.main.WorldToScreenPoint(positionOfHealthBar);
+            healthBar.transform.position = healthBarPos;
+
+            healthBar.GetComponent<Slider>().value = health / initialHealth;
+        }
+    }
 
     private void CountDownAndShoot()
     {
@@ -47,7 +77,6 @@ public class Enemy : MonoBehaviour {
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
         ProcessDamage(damageDealer);
-        
     }
 
     private void ProcessDamage(DamageDealer damageDealer)
@@ -64,10 +93,18 @@ public class Enemy : MonoBehaviour {
 
     private void Die()
     {
-        FindObjectOfType<ScoreHandler>().UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
+        ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
         Destroy(gameObject);
         var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);
         Destroy(blast, 1);
+    }
+
+    void OnDestroy()
+    {
+        if(healthBar!=null)
+        {
+            Destroy(healthBar);
+        }
     }
 }

@@ -148,6 +148,6 @@ public class Player : MonoBehaviour {
         AudioSource.PlayClipAtPoint(playerDeathAudio, Camera.main.transform.position, soundVolume);
         Instantiate(playerBlastPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        levelHandler.GetComponent<Level>().LoadGameOverScene();
+        LevelController.instance.LoadGameOverScene();
     }
 }
