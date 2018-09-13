@@ -27,9 +27,6 @@ public class Player : MonoBehaviour {
 
     [SerializeField] Slider playerHealthBar;
 
-    [Header("Level")]
-    [SerializeField] GameObject levelHandler;
-
 
     float xMin, xMax, yMin, yMax;
     Coroutine fireCoroutine;

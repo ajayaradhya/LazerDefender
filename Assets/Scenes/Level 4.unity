@@ -248,7 +248,7 @@ Prefab:
     - target: {fileID: 224737335179610208, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224737335179610208, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
@@ -323,6 +323,11 @@ Prefab:
     - target: {fileID: 1139857181538202, guid: 550702e82eef5a146bbbd3d8fa9f066f, type: 2}
       propertyPath: m_TagString
       value: CurrentScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464794114487864, guid: 550702e82eef5a146bbbd3d8fa9f066f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4674072
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 550702e82eef5a146bbbd3d8fa9f066f, type: 2}
@@ -474,9 +479,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7f83d9a580bbc184fa4ed536b2803906, type: 2}
   - {fileID: 11400000, guid: 374cd284a0a2c6045aca5b92ec538af9, type: 2}
   - {fileID: 11400000, guid: a656c72ffd2d79a479b889745d9dad9d, type: 2}
-  - {fileID: 11400000, guid: 6c2ddc59f9f3eb64bb9a7d9bd991ec02, type: 2}
-  - {fileID: 11400000, guid: 395a6782e35c08d46a3b1f844645295e, type: 2}
-  - {fileID: 11400000, guid: 50d8061c120aaf84db80ea90ea118f22, type: 2}
   looping: 0
 --- !u!1001 &1599931912
 Prefab:
@@ -488,7 +490,7 @@ Prefab:
     - target: {fileID: 114436615973423004, guid: fac886935ac9f95498000f1a950becd9,
         type: 2}
       propertyPath: waveConfigs.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4852520673166444, guid: fac886935ac9f95498000f1a950becd9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -587,7 +589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4467887893724348, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.64
+      value: -5.64
       objectReference: {fileID: 0}
     - target: {fileID: 4467887893724348, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
       propertyPath: m_LocalPosition.z
@@ -623,11 +625,16 @@ Prefab:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 94733304}
-    - target: {fileID: 114014117769410220, guid: 8df217453c63de74abb1fdad323b1175,
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
         type: 2}
-      propertyPath: levelHandler
+      propertyPath: healthText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2003800629}
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: playerHealthBar
+      value: 
+      objectReference: {fileID: 94733304}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0
