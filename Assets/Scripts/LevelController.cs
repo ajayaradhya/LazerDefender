@@ -40,13 +40,18 @@ public class LevelController : MonoBehaviour {
 
     public void LoadFirstLevel()
     {
+        ScoreHandler.instance.ResetScores();
+        LevelController.instance.LoadFirstLevelByInstance();
+    }
+
+    public void LoadFirstLevelWithoutScoreReset()
+    {
         LevelController.instance.LoadFirstLevelByInstance();
     }
 
     private void LoadStartMenuByInstance()
     {
         currentSceneIndex = 0;
-        ScoreHandler.instance.ResetScores();
 
         if(allScenes == null && allScenes.Length ==0)
         {

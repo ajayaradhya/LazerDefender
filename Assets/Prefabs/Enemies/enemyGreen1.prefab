@@ -100,12 +100,12 @@ MonoBehaviour:
     type: 2}
   blastAudio: {fileID: 8300000, guid: 7da2aedcb669b2a4496a20b836c13337, type: 3}
   blastSoundVolume: 0.75
-  health: 300
+  health: 200
   shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimebetweenShots: 3
+  minTimeBetweenShots: 0.5
+  maxTimebetweenShots: 2
   healthBarOffsetY: 0.4
-  scoreGainedByPlayerAfterEnemyDeath: 100
+  scoreGainedByPlayerAfterEnemyDeath: 150
 --- !u!114 &114757023465384200
 MonoBehaviour:
   m_ObjectHideFlags: 1

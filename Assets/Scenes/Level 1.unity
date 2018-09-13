@@ -300,6 +300,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224464794114487864, guid: 550702e82eef5a146bbbd3d8fa9f066f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4674072
+      objectReference: {fileID: 0}
     - target: {fileID: 114269383634691830, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -319,10 +324,6 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1139857181538202, guid: 550702e82eef5a146bbbd3d8fa9f066f, type: 2}
-      propertyPath: m_TagString
-      value: CurrentScore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 550702e82eef5a146bbbd3d8fa9f066f, type: 2}
@@ -474,6 +475,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c7d29b10d967474c96f80313e61138d, type: 2}
   - {fileID: 11400000, guid: 5af96896c06e61b438c2ab5e8428a26a, type: 2}
   - {fileID: 11400000, guid: 7f83d9a580bbc184fa4ed536b2803906, type: 2}
+  - {fileID: 11400000, guid: 374cd284a0a2c6045aca5b92ec538af9, type: 2}
   looping: 0
 --- !u!1001 &1599931912
 Prefab:

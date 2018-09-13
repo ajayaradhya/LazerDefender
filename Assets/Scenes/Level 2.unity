@@ -471,9 +471,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenSpawns: 4
   waveConfigs:
-  - {fileID: 11400000, guid: 4c7d29b10d967474c96f80313e61138d, type: 2}
-  - {fileID: 11400000, guid: 5af96896c06e61b438c2ab5e8428a26a, type: 2}
-  - {fileID: 11400000, guid: 7f83d9a580bbc184fa4ed536b2803906, type: 2}
+  - {fileID: 11400000, guid: a656c72ffd2d79a479b889745d9dad9d, type: 2}
+  - {fileID: 11400000, guid: 6c2ddc59f9f3eb64bb9a7d9bd991ec02, type: 2}
+  - {fileID: 11400000, guid: 395a6782e35c08d46a3b1f844645295e, type: 2}
+  - {fileID: 11400000, guid: 50d8061c120aaf84db80ea90ea118f22, type: 2}
   looping: 0
 --- !u!1001 &1599931912
 Prefab:
