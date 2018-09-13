@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
      <Compile Include="Assets\Scripts\DamageDealer.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyGroupPathing.cs" />
+     <Compile Include="Assets\Scripts\EnemyGroupSpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyLazer.cs" />
      <Compile Include="Assets\Scripts\EnemyPathing.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />

@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyGroupSpawner : MonoBehaviour {
+
+    [SerializeField] float timeBetweenSpawns = 2f;
+    [SerializeField] List<WaveConfig> waveConfigs;
+
+    // Use this for initialization
+    void Start ()
+    {
+        StartCoroutine(SpawnAllWaves());
+    }
+
+    IEnumerator SpawnAllWaves()
+    {
+        for (var waveIndex = 0; waveIndex < waveConfigs.Count; waveIndex++)
+        {
+            var currentWave = waveConfigs[waveIndex];
+            yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
+        }
+    }
+
+    IEnumerator SpawnAllEnemiesInWave(WaveConfig currentWave)
+    {
+        for (var i = 0; i < currentWave.GetAllWaypoints().Count; i++)
+        {
+            var enemy = Instantiate(currentWave.GetEnemyPrefab(), currentWave.GetAllWaypoints()[i].transform.position, Quaternion.identity);
+            enemy.AddComponent<EnemyGroupPathing>();
+            enemy.GetComponent<EnemyGroupPathing>().SetSpeedOfWave(currentWave.GetMovementSpeed());
+        }
+
+        yield return new WaitForSeconds(timeBetweenSpawns);
+    }
+}
