@@ -1199,6 +1199,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1315854924978492, guid: a39a960779b4b794cad37a35dbbb4455, type: 2}
+      propertyPath: m_Name
+      value: StarFieldParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 198697205977798202, guid: a39a960779b4b794cad37a35dbbb4455,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198697205977798202, guid: a39a960779b4b794cad37a35dbbb4455,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a39a960779b4b794cad37a35dbbb4455, type: 2}
   m_IsPrefabAsset: 0
