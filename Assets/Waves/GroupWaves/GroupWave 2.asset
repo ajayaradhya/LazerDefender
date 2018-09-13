@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c02b04c4157a4a4cb9105ec0ce82cf9, type: 3}
   m_Name: GroupWave 2
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1179437041942040, guid: 6a7d112f52bf6614380f9897a028c670,
+  enemyPrefab: {fileID: 1178259382316570, guid: 18aeaf33227564f4390ab1150a1db255,
     type: 2}
   pathPrefab: {fileID: 1279374012115774, guid: 84c0c67389f35e04290893a591e155ac, type: 2}
   timeBetweenSpawns: 0.2
