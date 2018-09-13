@@ -14,7 +14,8 @@ public class LevelController : MonoBehaviour {
 
     void Awake()
     {
-        if(instance == null)
+        PlayerPrefs.DeleteKey("Health");
+        if (instance == null)
         {
             instance = this;
         }
