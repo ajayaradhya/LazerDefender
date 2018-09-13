@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Lazer
   - Canvas
+  - Enemy
+  - CurrentScore
+  - FinalScore
   layers:
   - Default
   - TransparentFX

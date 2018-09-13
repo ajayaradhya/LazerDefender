@@ -10,6 +10,8 @@ public class EnemyGroupSpawner : MonoBehaviour {
 
     [SerializeField] bool looping = false;
 
+    private bool doneWithTheLevel = false;
+
     // Use this for initialization
     IEnumerator Start()
     {
@@ -18,6 +20,24 @@ public class EnemyGroupSpawner : MonoBehaviour {
             yield return StartCoroutine(SpawnAllWaves());
         }
         while (looping);
+
+        doneWithTheLevel = true;
+    }
+
+    void Update()
+    {
+        if(doneWithTheLevel)
+        {
+            LoadNextLevelIfAllEnemiesAreDead();
+        }
+    }
+
+    private void LoadNextLevelIfAllEnemiesAreDead()
+    {
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
+        {
+            LevelController.instance.LoadNextLevel();
+        }
     }
 
     IEnumerator SpawnAllWaves()

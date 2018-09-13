@@ -76,7 +76,6 @@ public class Enemy : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider)
     {
         DamageDealer damageDealer = collider.gameObject.GetComponent<DamageDealer>();
-        Debug.Log("enemy hit : " + collider + " - " + damageDealer);
         ProcessDamage(damageDealer);
     }
 
@@ -86,8 +85,6 @@ public class Enemy : MonoBehaviour {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
 
-        Debug.Log(health);
-
         if (health <= 0)
         {
             Die();
@@ -96,7 +93,7 @@ public class Enemy : MonoBehaviour {
 
     private void Die()
     {
-        FindObjectOfType<ScoreHandler>().UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
+        ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
         Destroy(gameObject);
         var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);

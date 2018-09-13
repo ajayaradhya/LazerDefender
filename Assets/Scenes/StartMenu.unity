@@ -653,6 +653,25 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092795770}
   m_CullTransparentMesh: 0
+--- !u!1 &1128624824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1439198666764782, guid: ca417b2bd0cbe1c4ba42ef51610b0d7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 196865190}
+--- !u!114 &1128624825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128624824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d3449afb0552541be168c8c5dacb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1975584009}
+  scoreController: {fileID: 114520439196261018, guid: c4a2809a89510014c8580fb788ae006d,
+    type: 2}
 --- !u!1 &1314916132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,12 +1080,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114431823234204886, guid: 57ca216641f1d6f48990025ef6e87e11,
           type: 2}
-        m_MethodName: LoadGameScene
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1135,24 +1154,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1975584006 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1467219536343220, guid: 57ca216641f1d6f48990025ef6e87e11,
+--- !u!114 &1975584009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114431823234204886, guid: 57ca216641f1d6f48990025ef6e87e11,
     type: 2}
   m_PrefabInternal: {fileID: 2059878706}
---- !u!114 &1975584007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1975584006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e3afb384f0bda4d879f18f9c81f032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  finalScoreText: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 3d66add136396464e9b856d8b01a6aa6, type: 3}
 --- !u!1001 &1987514147
 Prefab:
   m_ObjectHideFlags: 0
