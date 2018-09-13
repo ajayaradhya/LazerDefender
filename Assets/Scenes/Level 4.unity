@@ -248,7 +248,7 @@ Prefab:
     - target: {fileID: 224737335179610208, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224737335179610208, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
@@ -621,6 +621,16 @@ Prefab:
       value: 
       objectReference: {fileID: 2003800629}
     - target: {fileID: 114014117769410220, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: playerHealthBar
+      value: 
+      objectReference: {fileID: 94733304}
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 2003800629}
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
         type: 2}
       propertyPath: playerHealthBar
       value: 

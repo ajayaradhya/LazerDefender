@@ -248,7 +248,7 @@ Prefab:
     - target: {fileID: 224737335179610208, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224737335179610208, guid: 550702e82eef5a146bbbd3d8fa9f066f,
         type: 2}
@@ -323,6 +323,11 @@ Prefab:
     - target: {fileID: 1139857181538202, guid: 550702e82eef5a146bbbd3d8fa9f066f, type: 2}
       propertyPath: m_TagString
       value: CurrentScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464794114487864, guid: 550702e82eef5a146bbbd3d8fa9f066f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4674072
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 550702e82eef5a146bbbd3d8fa9f066f, type: 2}
@@ -629,6 +634,16 @@ Prefab:
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 2003800629}
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: playerHealthBar
+      value: 
+      objectReference: {fileID: 94733304}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0
