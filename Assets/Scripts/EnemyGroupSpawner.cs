@@ -8,10 +8,16 @@ public class EnemyGroupSpawner : MonoBehaviour {
     [SerializeField] float timeBetweenSpawns = 2f;
     [SerializeField] List<WaveConfig> waveConfigs;
 
+    [SerializeField] bool looping = false;
+
     // Use this for initialization
-    void Start ()
+    IEnumerator Start()
     {
-        StartCoroutine(SpawnAllWaves());
+        do
+        {
+            yield return StartCoroutine(SpawnAllWaves());
+        }
+        while (looping);
     }
 
     IEnumerator SpawnAllWaves()
