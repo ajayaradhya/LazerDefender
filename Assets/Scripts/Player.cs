@@ -37,7 +37,18 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        currentHealth = maxHealth;
+
+        var healthInMemory = PlayerPrefs.GetFloat("Health");
+        if (healthInMemory == default(System.Single))
+        {
+            PlayerPrefs.SetFloat("Health", maxHealth);
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            currentHealth = healthInMemory;
+        }
+        
         SetUpMoveBoundaries();
         UpdatePlayerHealth();
     }
@@ -118,6 +129,8 @@ public class Player : MonoBehaviour {
     {
         var damageDealer = collider.GetComponent<DamageDealer>();
         currentHealth -= damageDealer.GetDamage();
+        PlayerPrefs.SetFloat("Health", currentHealth);
+
         UpdatePlayerHealth();
         damageDealer.Hit();
     }
@@ -144,6 +157,7 @@ public class Player : MonoBehaviour {
 
     private void Die()
     {
+        PlayerPrefs.DeleteKey("Health");
         Time.timeScale = afterDeathTimeScale;
         AudioSource.PlayClipAtPoint(playerDeathAudio, Camera.main.transform.position, soundVolume);
         Instantiate(playerBlastPrefab, transform.position, Quaternion.identity);
