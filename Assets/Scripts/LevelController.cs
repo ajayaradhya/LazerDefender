@@ -104,10 +104,10 @@ public class LevelController : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
-    IEnumerator LevelCompletionTransition()
-    {
+    //IEnumerator LevelCompletionTransition()
+    //{
 
-    }
+    //}
 
 
     private string[] GetAllScenes()
