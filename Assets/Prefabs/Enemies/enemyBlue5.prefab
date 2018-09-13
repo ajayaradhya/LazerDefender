@@ -114,9 +114,9 @@ MonoBehaviour:
   health: 400
   shotCounter: 0
   minTimeBetweenShots: 0.2
-  maxTimebetweenShots: 3
+  maxTimebetweenShots: 2
   healthBarOffsetY: 0.4
-  scoreGainedByPlayerAfterEnemyDeath: 100
+  scoreGainedByPlayerAfterEnemyDeath: 150
 --- !u!212 &212351288315902626
 SpriteRenderer:
   m_ObjectHideFlags: 1

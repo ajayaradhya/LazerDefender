@@ -9,16 +9,36 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] bool looping = false;
 
     private int startingWave = 0;
+    private bool doneWithTheLevel = false;
 
-	// Use this for initialization
-	IEnumerator Start ()
+    // Use this for initialization
+    IEnumerator Start ()
     {
         do
         {
             yield return StartCoroutine(SpawnAllWaves());
         }
         while (looping);
-	}
+
+        doneWithTheLevel = true;
+    }
+
+    void Update()
+    {
+        if (doneWithTheLevel)
+        {
+            LoadNextLevelIfAllEnemiesAreDead();
+        }
+    }
+
+    private void LoadNextLevelIfAllEnemiesAreDead()
+    {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
+        {
+            Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel());
+            LevelController.instance.LoadNextLevel();
+        }
+    }
 
     IEnumerator SpawnAllWaves()
     {
