@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4451372089431520}
   - component: {fileID: 212693768839922440}
-  - component: {fileID: 114949995979402260}
+  - component: {fileID: 114050058726432284}
   - component: {fileID: 114384742085700844}
   - component: {fileID: 60291088448067642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBoss 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712785756742502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,6 +129,33 @@ PolygonCollider2D:
       - {x: -0.024999999, y: -0.96999997}
       - {x: -0.024999999, y: 0.28}
       - {x: 0.015, y: 0.28}
+--- !u!114 &114050058726432284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712785756742502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638c768cd262a2046bcde30f8e27724c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lazerPrefabs:
+  - {fileID: 1205126438722624, guid: db1daea54527b3547bc3c6f15c96e054, type: 2}
+  - {fileID: 1856312546595968, guid: 06f34575593168046b084861a50fe3b9, type: 2}
+  - {fileID: 1440877903830364, guid: 0cffd0eb525b2f2499557139d512eb08, type: 2}
+  blastEffectPrefab: {fileID: 1406363624822292, guid: 01136d360d53f3a4e9c6df0dbce0d1d5,
+    type: 2}
+  enemyHealthBarPrefab: {fileID: 1895968421935622, guid: b61e9b45d5e857b4096c9b362c2611ec,
+    type: 2}
+  blastAudio: {fileID: 8300000, guid: 7da2aedcb669b2a4496a20b836c13337, type: 3}
+  blastSoundVolume: 0.75
+  health: 10000
+  shotCounter: 0
+  minTimeBetweenShots: 0.01
+  maxTimebetweenShots: 0.5
+  healthBarOffsetY: 1
+  scoreGainedByPlayerAfterEnemyDeath: 500
 --- !u!114 &114384742085700844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,31 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 500
---- !u!114 &114949995979402260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1712785756742502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708415561f4464448a549a0eec2fe63d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lazerPrefab: {fileID: 1440877903830364, guid: 0cffd0eb525b2f2499557139d512eb08,
-    type: 2}
-  blastEffectPrefab: {fileID: 1406363624822292, guid: 01136d360d53f3a4e9c6df0dbce0d1d5,
-    type: 2}
-  enemyHealthBarPrefab: {fileID: 1895968421935622, guid: b61e9b45d5e857b4096c9b362c2611ec,
-    type: 2}
-  blastAudio: {fileID: 8300000, guid: 7da2aedcb669b2a4496a20b836c13337, type: 3}
-  blastSoundVolume: 0.75
-  health: 5000
-  shotCounter: 0
-  minTimeBetweenShots: 0.1
-  maxTimebetweenShots: 1
-  healthBarOffsetY: 1
-  scoreGainedByPlayerAfterEnemyDeath: 500
 --- !u!212 &212693768839922440
 SpriteRenderer:
   m_ObjectHideFlags: 1
