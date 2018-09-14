@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
     [Header("Player Movements")]
     [SerializeField] float moveSpeed = 10;
+    [SerializeField] float movementYOffset = 1f;
     [SerializeField] float padding = 1f;
     [SerializeField] float paddingTop = 3f;
 
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour {
     {
         var currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var newXPos = Mathf.Clamp(currentMousePosition.x, xMin, xMax);
-        var newYPos = Mathf.Clamp(currentMousePosition.y, yMin, yMax);
+        var newYPos = Mathf.Clamp(currentMousePosition.y, yMin, yMax) + movementYOffset;
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(newXPos, newYPos), moveSpeed * Time.deltaTime);
 
     }
@@ -129,6 +130,13 @@ public class Player : MonoBehaviour {
         PlayerPrefs.SetFloat("Health", currentHealth);
 
         UpdatePlayerHealth();
+
+        if (collider.gameObject.tag == "Enemy")
+        {
+            collider.gameObject.GetComponent<Enemy>().Die();
+            return;
+        }
+
         damageDealer.Hit();
     }
 

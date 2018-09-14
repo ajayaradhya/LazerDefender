@@ -64,7 +64,6 @@ public class LevelController : MonoBehaviour {
     private void LoadFirstLevelByInstance()
     {
         currentSceneIndex = 1;
-        ScoreHandler.instance.ResetScores();
         SceneManager.LoadScene(allScenes[currentSceneIndex]);
     }
 
