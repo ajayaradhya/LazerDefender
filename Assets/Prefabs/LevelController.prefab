@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d66add136396464e9b856d8b01a6aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeScreenLoad: 2
+  delayBeforeScreenLoad: 1
   currentSceneIndex: 0
   allScenes: []
