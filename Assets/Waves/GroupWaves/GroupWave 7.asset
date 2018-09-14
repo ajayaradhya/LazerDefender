@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c02b04c4157a4a4cb9105ec0ce82cf9, type: 3}
   m_Name: GroupWave 7
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1755662413518202, guid: 701b8c25adc267f418efb1c540953d55,
+  enemyPrefab: {fileID: 1712785756742502, guid: 806d607dad9a542478a3d4791381ee9c,
     type: 2}
-  pathPrefab: {fileID: 1279374012115774, guid: d485b4b3b4d85e74ca5de6b191da05c2, type: 2}
+  pathPrefab: {fileID: 1279374012115774, guid: c445405dfde270442bdd90b273a6b52a, type: 2}
   timeBetweenSpawns: 0.2
   spawnRandomFactor: 0.3
-  numberOfEnemies: 5
-  moveSpeed: 4
+  numberOfEnemies: 3
+  moveSpeed: 2
