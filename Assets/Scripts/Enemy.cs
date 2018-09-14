@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimebetweenShots = 3f;
-    [SerializeField] float healthBarOffsetY = 2f;
+    [SerializeField] float healthBarOffsetY = 1f;
 
     [SerializeField] int scoreGainedByPlayerAfterEnemyDeath = 100;
 
@@ -47,8 +47,12 @@ public class Enemy : MonoBehaviour {
     void Update ()
     {
         CountDownAndShoot();
+        UpdateHealthBar();
+    }
 
-        if(healthBar != null)
+    private void UpdateHealthBar()
+    {
+        if (healthBar != null)
         {
             var positionOfHealthBar = new Vector2(transform.position.x, transform.position.y + healthBarOffsetY);
             var healthBarPos = Camera.main.WorldToScreenPoint(positionOfHealthBar);
@@ -95,6 +99,7 @@ public class Enemy : MonoBehaviour {
     {
         StartCoroutine(CreateBlast(transform.position));
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
+        ScoreHandler.instance.UpdateScoreBy(scoreGainedByPlayerAfterEnemyDeath);
         Destroy(gameObject);
     }
 
@@ -102,7 +107,6 @@ public class Enemy : MonoBehaviour {
     {
         if (healthBar != null)
         {
-            ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
             Destroy(healthBar);
         }
     }

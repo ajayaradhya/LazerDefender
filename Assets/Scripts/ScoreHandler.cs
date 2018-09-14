@@ -31,12 +31,27 @@ public class ScoreHandler : MonoBehaviour
 
     private static void UpdateScore()
     {
+        if (PlayerPrefs.GetInt("HighScore") == default(int))
+        {
+            PlayerPrefs.SetInt("HighScore", 0);
+        }
+
+        var currentHighScoreInMemory = PlayerPrefs.GetInt("HighScore");
+        var currentGameScore = PlayerPrefs.GetInt("Score");
+
+        //Debug.Log("current " + currentGameScore  + "-- highest :" + currentHighScoreInMemory);
+
+        if (currentHighScoreInMemory < currentGameScore)
+        {
+            PlayerPrefs.SetInt("HighScore", currentGameScore);
+        }
+
         if (GameObject.FindGameObjectsWithTag("CurrentScore").Length > 0)
         {
             var scoreText = GameObject.FindGameObjectsWithTag("CurrentScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
             if (scoreText != null)
             {
-                scoreText.text = PlayerPrefs.GetInt("Score").ToString();
+                scoreText.text = currentGameScore.ToString();
             }
         }
 
@@ -45,12 +60,21 @@ public class ScoreHandler : MonoBehaviour
             var scoreText = GameObject.FindGameObjectsWithTag("FinalScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
             if (scoreText != null)
             {
-                scoreText.text = PlayerPrefs.GetInt("Score").ToString();
+                scoreText.text = currentGameScore.ToString();
+            }
+        }
+
+        if (GameObject.FindGameObjectsWithTag("HighScore").Length > 0)
+        {
+            var scoreText = GameObject.FindGameObjectsWithTag("HighScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
+            if (scoreText != null)
+            {
+                scoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
             }
         }
     }
 
-    public void UpdateScore(int scoreToAdd)
+    public void UpdateScoreBy(int scoreToAdd)
     {
         totalScore += scoreToAdd;
         PlayerPrefs.SetInt("Score", totalScore);
@@ -65,7 +89,7 @@ public class ScoreHandler : MonoBehaviour
     public void ResetScores()
     {
         totalScore = 0;
-        PlayerPrefs.SetInt("Score", totalScore);
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     

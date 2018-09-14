@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0ef0b462f68c04f9cb14edd30674f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 500
+  damage: 100
 --- !u!114 &114546357456884860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   minTimeBetweenShots: 0.1
   maxTimebetweenShots: 0.5
   healthBarOffsetY: 0.4
-  scoreGainedByPlayerAfterEnemyDeath: 50
+  scoreGainedByPlayerAfterEnemyDeath: 5
 --- !u!114 &114638948455054522
 MonoBehaviour:
   m_ObjectHideFlags: 1

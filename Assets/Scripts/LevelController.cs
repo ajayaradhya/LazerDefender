@@ -69,15 +69,17 @@ public class LevelController : MonoBehaviour {
 
     public void LoadNextLevel()
     {
+        Debug.Log("load next level :" + currentSceneIndex);
         try
         {
             currentSceneIndex++;
 
-            if(currentSceneIndex > allScenes.Length - 2)
+            if(currentSceneIndex >= allScenes.Length - 2)
             {
                 currentSceneIndex = allScenes.Length - 2;
             }
-            
+
+            Debug.Log("loading :" + allScenes[currentSceneIndex]);
             SceneManager.LoadScene(allScenes[currentSceneIndex]);
         }
         catch (Exception ex)

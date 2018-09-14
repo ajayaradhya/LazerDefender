@@ -328,7 +328,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4005085408467198, guid: e05908ed02fe8464181a7d09c0d73939, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4005085408467198, guid: e05908ed02fe8464181a7d09c0d73939, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1272,10 +1272,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114431823234204886, guid: 57ca216641f1d6f48990025ef6e87e11,
-        type: 2}
-      propertyPath: currentSceneIndex
-      value: 0
+    - target: {fileID: 1467219536343220, guid: 57ca216641f1d6f48990025ef6e87e11, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ca216641f1d6f48990025ef6e87e11, type: 2}

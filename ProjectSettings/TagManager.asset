@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - CurrentScore
   - FinalScore
+  - HighScore
   layers:
   - Default
   - TransparentFX
