@@ -31,12 +31,25 @@ public class ScoreHandler : MonoBehaviour
 
     private static void UpdateScore()
     {
+        if (PlayerPrefs.GetInt("HighScore") == default(int))
+        {
+            Debug.Log("creating high score");
+            PlayerPrefs.SetInt("HighScore", 0);
+        }
+
+        var currentHighScoreInMemory = PlayerPrefs.GetInt("HighScore");
+        var currentGameScore = PlayerPrefs.GetInt("Score");
+        if (currentHighScoreInMemory < currentGameScore)
+        {
+            PlayerPrefs.SetInt("HighScore", currentGameScore);
+        }
+
         if (GameObject.FindGameObjectsWithTag("CurrentScore").Length > 0)
         {
             var scoreText = GameObject.FindGameObjectsWithTag("CurrentScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
             if (scoreText != null)
             {
-                scoreText.text = PlayerPrefs.GetInt("Score").ToString();
+                scoreText.text = currentGameScore.ToString();
             }
         }
 
@@ -45,7 +58,16 @@ public class ScoreHandler : MonoBehaviour
             var scoreText = GameObject.FindGameObjectsWithTag("FinalScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
             if (scoreText != null)
             {
-                scoreText.text = PlayerPrefs.GetInt("Score").ToString();
+                scoreText.text = currentGameScore.ToString();
+            }
+        }
+
+        if (GameObject.FindGameObjectsWithTag("HighScore").Length > 0)
+        {
+            var scoreText = GameObject.FindGameObjectsWithTag("HighScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
+            if (scoreText != null)
+            {
+                scoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
             }
         }
     }
