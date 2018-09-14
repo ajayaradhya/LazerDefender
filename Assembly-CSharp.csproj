@@ -249,6 +249,7 @@
      <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerLazer.cs" />
+     <Compile Include="Assets\Scripts\PlayGamesController.cs" />
      <Compile Include="Assets\Scripts\ScoreHandler.cs" />
      <Compile Include="Assets\Scripts\Shredder.cs" />
      <Compile Include="Assets\Scripts\WaveConfig.cs" />

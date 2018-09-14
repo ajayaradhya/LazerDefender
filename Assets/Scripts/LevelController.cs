@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelController : MonoBehaviour {
-
+public class LevelController : MonoBehaviour
+{ 
     [SerializeField] float delayBeforeScreenLoad = 1f;
     public static LevelController instance = null;
     [SerializeField] int currentSceneIndex = 0;
