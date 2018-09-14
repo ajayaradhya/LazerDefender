@@ -7,7 +7,7 @@ public class EnemyGroupSpawner : MonoBehaviour {
 
     [SerializeField] float timeBetweenSpawns = 2f;
     [SerializeField] List<WaveConfig> waveConfigs;
-
+    [SerializeField] GameObject bossSpawnerPrefab;
     [SerializeField] bool looping = false;
 
     private bool doneWithTheLevel = false;
@@ -36,8 +36,8 @@ public class EnemyGroupSpawner : MonoBehaviour {
     {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         {
-            Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel());
-            LevelController.instance.LoadNextLevel();
+            Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel() + ". Spawning boss " + bossSpawnerPrefab.ToString());
+            Instantiate(bossSpawnerPrefab, transform.position, Quaternion.identity);
         }
     }
 

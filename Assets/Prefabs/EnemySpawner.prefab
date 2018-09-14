@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4852520673166444}
   - component: {fileID: 114436615973423004}
+  - component: {fileID: 114353340288226192}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -40,6 +41,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114353340288226192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586332560478992}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2293dac4f3e642b4684efa4ef9054773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenSpawns: 4
+  waveConfigs:
+  - {fileID: 11400000, guid: 4c7d29b10d967474c96f80313e61138d, type: 2}
+  - {fileID: 11400000, guid: 5af96896c06e61b438c2ab5e8428a26a, type: 2}
+  - {fileID: 11400000, guid: 7f83d9a580bbc184fa4ed536b2803906, type: 2}
+  - {fileID: 11400000, guid: 374cd284a0a2c6045aca5b92ec538af9, type: 2}
+  - {fileID: 11400000, guid: a656c72ffd2d79a479b889745d9dad9d, type: 2}
+  - {fileID: 11400000, guid: 6c2ddc59f9f3eb64bb9a7d9bd991ec02, type: 2}
+  - {fileID: 11400000, guid: 395a6782e35c08d46a3b1f844645295e, type: 2}
+  - {fileID: 11400000, guid: 50d8061c120aaf84db80ea90ea118f22, type: 2}
+  bossSpawnerPrefab: {fileID: 1527502077633106, guid: 703dca89ccb0b224bb5df641cea778f5,
+    type: 2}
+  looping: 0
 --- !u!114 &114436615973423004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,4 +80,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2bb33b94f51d5ae4c9eb87f9cbabbda9, type: 2}
   - {fileID: 11400000, guid: 79a769fe3e592c7428b1d5a73a2cfe84, type: 2}
   - {fileID: 11400000, guid: 35464dbb401b21a48bcb81b93626235b, type: 2}
-  looping: 1
+  - {fileID: 11400000, guid: 4bacd4d1ac82ba548afe460701693862, type: 2}
+  - {fileID: 11400000, guid: 68279cdc710fba74eba8eaf5d26cc9f3, type: 2}
+  - {fileID: 11400000, guid: dc2bbd9ebb7362d4487b3b13bd1e1f7a, type: 2}
+  - {fileID: 11400000, guid: f4401782390b7534a9c691b81426bd1f, type: 2}
+  looping: 0
+  bossSpawnerPrefab: {fileID: 1527502077633106, guid: 703dca89ccb0b224bb5df641cea778f5,
+    type: 2}
