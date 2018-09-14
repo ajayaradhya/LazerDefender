@@ -130,6 +130,13 @@ public class Player : MonoBehaviour {
         PlayerPrefs.SetFloat("Health", currentHealth);
 
         UpdatePlayerHealth();
+
+        if (collider.gameObject.tag == "Enemy")
+        {
+            collider.gameObject.GetComponent<Enemy>().Die();
+            return;
+        }
+
         damageDealer.Hit();
     }
 

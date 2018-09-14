@@ -91,20 +91,26 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    private void Die()
+    public void Die()
     {
-        ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
+        StartCoroutine(CreateBlast(transform.position));
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
         Destroy(gameObject);
-        var blast = Instantiate(blastEffectPrefab, transform.position, Quaternion.identity);
-        Destroy(blast, 1);
     }
 
     void OnDestroy()
     {
-        if(healthBar!=null)
+        if (healthBar != null)
         {
+            ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
             Destroy(healthBar);
         }
+    }
+
+    IEnumerator CreateBlast(Vector3 position)
+    {
+        var blast = Instantiate(blastEffectPrefab, position, Quaternion.identity);
+        Destroy(blast, 0.5f);
+        yield return new WaitForSeconds(1f);
     }
 }
