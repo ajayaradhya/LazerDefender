@@ -99,6 +99,7 @@ public class Enemy : MonoBehaviour {
     {
         StartCoroutine(CreateBlast(transform.position));
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
+        ScoreHandler.instance.UpdateScoreBy(scoreGainedByPlayerAfterEnemyDeath);
         Destroy(gameObject);
     }
 
@@ -106,7 +107,6 @@ public class Enemy : MonoBehaviour {
     {
         if (healthBar != null)
         {
-            ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
             Destroy(healthBar);
         }
     }

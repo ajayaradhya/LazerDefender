@@ -97,6 +97,8 @@ public class EnemyBoss : MonoBehaviour {
         StartCoroutine(CreateBlast(transform.position));
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
         Destroy(gameObject);
+        ScoreHandler.instance.UpdateScoreBy(scoreGainedByPlayerAfterEnemyDeath);
+        Debug.Log("boss is dead");
         LevelController.instance.LoadNextLevel();
     }
 
@@ -104,7 +106,6 @@ public class EnemyBoss : MonoBehaviour {
     {
         if (healthBar != null)
         {
-            ScoreHandler.instance.UpdateScore(scoreGainedByPlayerAfterEnemyDeath);
             Destroy(healthBar);
         }
     }

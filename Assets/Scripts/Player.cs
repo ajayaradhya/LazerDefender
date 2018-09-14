@@ -133,7 +133,18 @@ public class Player : MonoBehaviour {
 
         if (collider.gameObject.tag == "Enemy")
         {
-            collider.gameObject.GetComponent<Enemy>().Die();
+            if (collider.gameObject.GetComponent<Enemy>() == null)
+            {
+                Debug.Log("hitting boss. Killing player.");
+                currentHealth = 0;
+                UpdatePlayerHealth();
+                return;
+            }
+            else
+            {
+                collider.gameObject.GetComponent<Enemy>().Die();
+            }
+
             return;
         }
 

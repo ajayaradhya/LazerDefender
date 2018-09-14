@@ -74,7 +74,7 @@ public class LevelController : MonoBehaviour {
         {
             currentSceneIndex++;
 
-            if(currentSceneIndex > allScenes.Length - 2)
+            if(currentSceneIndex >= allScenes.Length - 2)
             {
                 currentSceneIndex = allScenes.Length - 2;
             }

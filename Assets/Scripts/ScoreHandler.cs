@@ -33,12 +33,14 @@ public class ScoreHandler : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("HighScore") == default(int))
         {
-            Debug.Log("creating high score");
             PlayerPrefs.SetInt("HighScore", 0);
         }
 
         var currentHighScoreInMemory = PlayerPrefs.GetInt("HighScore");
         var currentGameScore = PlayerPrefs.GetInt("Score");
+
+        //Debug.Log("current " + currentGameScore  + "-- highest :" + currentHighScoreInMemory);
+
         if (currentHighScoreInMemory < currentGameScore)
         {
             PlayerPrefs.SetInt("HighScore", currentGameScore);
@@ -72,7 +74,7 @@ public class ScoreHandler : MonoBehaviour
         }
     }
 
-    public void UpdateScore(int scoreToAdd)
+    public void UpdateScoreBy(int scoreToAdd)
     {
         totalScore += scoreToAdd;
         PlayerPrefs.SetInt("Score", totalScore);
@@ -87,7 +89,7 @@ public class ScoreHandler : MonoBehaviour
     public void ResetScores()
     {
         totalScore = 0;
-        PlayerPrefs.SetInt("Score", totalScore);
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     

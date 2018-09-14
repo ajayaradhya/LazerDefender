@@ -37,7 +37,8 @@ public class EnemySpawner : MonoBehaviour {
         if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
         {
             Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel() + ". Spawning boss " + bossSpawnerPrefab.ToString());
-            Instantiate(bossSpawnerPrefab, transform.position, Quaternion.identity);
+            var bossSpawner = Instantiate(bossSpawnerPrefab, transform.position, Quaternion.identity);
+            bossSpawner.transform.SetParent(gameObject.transform, false);
         }
     }
 
