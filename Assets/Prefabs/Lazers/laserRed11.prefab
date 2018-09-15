@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50603940846306240}
   - component: {fileID: 114227282811642566}
   - component: {fileID: 114533565238190506}
+  - component: {fileID: 114607837484920414}
   m_Layer: 11
   m_Name: laserRed11
   m_TagString: Untagged
@@ -105,6 +106,18 @@ MonoBehaviour:
   lazerSpeed: 15
   enemyLazerAudio: {fileID: 8300000, guid: 37afd7cf7ebcea64d922b45e03ce1e55, type: 3}
   lazerSoundVolume: 0.75
+--- !u!114 &114607837484920414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440877903830364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdbce04be45fad40be21a338cc75757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpin: 360
 --- !u!212 &212660908633145740
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,8 +150,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1633454407
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 269cfb0b39f812546a9b395dfce5dbcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114273817405394222}
   - component: {fileID: 50994877950901922}
   - component: {fileID: 114916797907224580}
+  - component: {fileID: 114217365581358174}
   m_Layer: 11
   m_Name: laserBlue09
   m_TagString: Untagged
@@ -79,6 +80,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.09, y: 0.37}
   m_Direction: 0
+--- !u!114 &114217365581358174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205126438722624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdbce04be45fad40be21a338cc75757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpin: 360
 --- !u!114 &114273817405394222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,8 +150,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1633454407
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fb353e48d671cf544b78087ea0478e8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
