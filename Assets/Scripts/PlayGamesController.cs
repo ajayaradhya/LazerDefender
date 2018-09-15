@@ -5,29 +5,60 @@ using System;
 
 public class PlayGamesController : MonoBehaviour
 {
+    private bool isAuthenticated = false;
 
     // Use this for initialization
     void Start()
     {
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
-        PlayGamesPlatform.InitializeInstance(config);
-        PlayGamesPlatform.Activate();
+        DontDestroyOnLoad(this);
 
-        SignIn();
+        try
+        {
+            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+            PlayGamesPlatform.InitializeInstance(config);
+            PlayGamesPlatform.DebugLogEnabled = true;
+            PlayGamesPlatform.Activate();
+            GameObject.FindGameObjectWithTag("LoginStatus").GetComponent<TMPro.TextMeshProUGUI>().text = "not connected";
+            SignIn();
+        }
+        catch(Exception ex)
+        {
+            Debug.Log("ajay : unable to setup google play acc " + ex.InnerException);
+        }
     }
 
     private void SignIn()
     {
-        Social.localUser.Authenticate(success => { });
+        Debug.Log("Sign in called..");
+        Social.localUser.Authenticate((bool success) => {
+            isAuthenticated = success;
+            GameObject.FindGameObjectWithTag("LoginStatus").GetComponent<TMPro.TextMeshProUGUI>().text = "success";
+        });
     }
 
-    public static void AddScoreToLeaderBoard(string leaderBoard, int score)
+    public void AddScoreToLeaderBoard(string leaderBoard, int score)
     {
-        Social.ReportScore(score, leaderBoard, success => { });
+        if(isAuthenticated)
+        {
+            Social.ReportScore(score, leaderBoard, success => { });
+        }
+        else
+        {
+            Debug.Log("ajay : to connect to services");
+        }
+        
     }
 
-    public static void ShowLeaderBoard()
+    public void ShowLeaderBoard()
     {
-        Social.ShowLeaderboardUI();
+        if (isAuthenticated)
+        {
+            Social.ShowLeaderboardUI();
+        }
+        else
+        {
+            Debug.Log("ajay : to connect to services");
+        }
+        
     }
 }
