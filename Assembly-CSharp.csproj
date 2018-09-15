@@ -56,6 +56,7 @@
      <Compile Include="Assets\BossSpawner.cs" />
      <Compile Include="Assets\EnemyBoss.cs" />
      <Compile Include="Assets\LazerSpinner.cs" />
+     <Compile Include="Assets\MusicController.cs" />
      <Compile Include="Assets\Scripts\AdManager.cs" />
      <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
      <Compile Include="Assets\Scripts\DamageDealer.cs" />
