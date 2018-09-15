@@ -112,12 +112,6 @@ public class LevelController : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
-    //IEnumerator LevelCompletionTransition()
-    //{
-
-    //}
-
-
     private string[] GetAllScenes()
     {
         int sceneCount = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;

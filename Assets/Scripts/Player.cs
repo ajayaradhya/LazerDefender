@@ -91,9 +91,14 @@ public class Player : MonoBehaviour {
             {
                 if(shieldPrefab != null)
                 {
-                    var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
-                    shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
-                    Destroy(shield, 5f); 
+                    if (GameObject.FindObjectsOfType<Shield>().Length == 0)
+                    {
+                        var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
+                        shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
+                        Destroy(shield, 5f);
+                    }
+
+                         
                 }
             }
 
@@ -164,12 +169,13 @@ public class Player : MonoBehaviour {
             {
                 var enemy = collider.gameObject.GetComponent<Enemy>();
 
-                if (enemy != null)
+                if (enemy != null && !string.Equals(enemy.tag, "EnemyBoss"))
                 {
                     enemy.Die();
+                    damageDealer.Hit();
                 }
 
-                damageDealer.Hit();
+                
             }
 
             return;

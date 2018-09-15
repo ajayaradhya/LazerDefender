@@ -53,28 +53,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BossSpawner.cs" />
-     <Compile Include="Assets\EnemyBoss.cs" />
-     <Compile Include="Assets\LazerSpinner.cs" />
-     <Compile Include="Assets\MusicController.cs" />
      <Compile Include="Assets\Scripts\AdManager.cs" />
      <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
+     <Compile Include="Assets\Scripts\BossSpawner.cs" />
      <Compile Include="Assets\Scripts\DamageDealer.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyBoss.cs" />
      <Compile Include="Assets\Scripts\EnemyGroupPathing.cs" />
      <Compile Include="Assets\Scripts\EnemyGroupSpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyLazer.cs" />
      <Compile Include="Assets\Scripts\EnemyPathing.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
+     <Compile Include="Assets\Scripts\LazerSpinner.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
+     <Compile Include="Assets\Scripts\MusicController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerLazer.cs" />
      <Compile Include="Assets\Scripts\ScoreHandler.cs" />
+     <Compile Include="Assets\Scripts\Shield.cs" />
+     <Compile Include="Assets\Scripts\ShieldCountHandler.cs" />
      <Compile Include="Assets\Scripts\Shredder.cs" />
      <Compile Include="Assets\Scripts\WaveConfig.cs" />
-     <Compile Include="Assets\Shield.cs" />
-     <Compile Include="Assets\ShieldCountHandler.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
