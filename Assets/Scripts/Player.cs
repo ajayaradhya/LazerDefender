@@ -28,10 +28,16 @@ public class Player : MonoBehaviour {
 
     [SerializeField] Slider playerHealthBar;
 
+    [SerializeField] GameObject shieldPrefab;
+
 
     float xMin, xMax, yMin, yMax;
     Coroutine fireCoroutine;
     float currentHealth;
+
+    float clicked = 0;
+    float clicktime = 0;
+    float clickdelay = 0.5f;
 
     // Use this for initialization
     void Start () {
@@ -79,14 +85,40 @@ public class Player : MonoBehaviour {
 
     private void Fire()
     {
-        if(Input.GetButtonDown("Fire1") )
+        if(Input.GetButtonDown("Fire1"))
         {
+            if(isDoubleClick())
+            {
+                Debug.Log("double click recorded..");
+                if(shieldPrefab != null)
+                {
+                    var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
+                    shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
+                    Destroy(shield, 5f); 
+                }
+            }
+
             fireCoroutine = StartCoroutine(FireContinuously());
         }
         if (Input.GetButtonUp("Fire1"))
         {
             StopCoroutine(fireCoroutine);
         }
+    }
+
+    bool isDoubleClick()
+    {
+        clicked++;
+        if (clicked == 1) clicktime = Time.time;
+
+        if (clicked > 1 && Time.time - clicktime < clickdelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+            return true;
+        }
+        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+        return false;
     }
 
     IEnumerator FireContinuously()
