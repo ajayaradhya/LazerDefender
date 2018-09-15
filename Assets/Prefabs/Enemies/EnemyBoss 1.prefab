@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 60291088448067642}
   m_Layer: 9
   m_Name: EnemyBoss 1
-  m_TagString: Enemy
+  m_TagString: EnemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
     type: 2}
   blastAudio: {fileID: 8300000, guid: 7da2aedcb669b2a4496a20b836c13337, type: 3}
   blastSoundVolume: 0.75
-  health: 10000
+  health: 15000
   shotCounter: 0
   minTimeBetweenShots: 0.01
   maxTimebetweenShots: 0.5

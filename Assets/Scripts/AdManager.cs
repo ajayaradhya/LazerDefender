@@ -37,14 +37,11 @@ public class AdManager : MonoBehaviour {
         switch(result)
         {
             case ShowResult.Finished:
-                Debug.Log("Player has seen ads. Time for rewards.");
                 LevelController.instance.LoadFirstLevelWithoutScoreReset();
                 break;
             case ShowResult.Failed:
-                Debug.Log("Failed to watch ads.");
                 break;
             case ShowResult.Skipped:
-                Debug.Log("Ad watching skipped. No rewards.");
                 break;
         }
     }

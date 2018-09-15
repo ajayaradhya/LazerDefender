@@ -39,8 +39,6 @@ public class ScoreHandler : MonoBehaviour
         var currentHighScoreInMemory = PlayerPrefs.GetInt("HighScore");
         var currentGameScore = PlayerPrefs.GetInt("Score");
 
-        //Debug.Log("current " + currentGameScore  + "-- highest :" + currentHighScoreInMemory);
-
         if (currentHighScoreInMemory < currentGameScore)
         {
             PlayerPrefs.SetInt("HighScore", currentGameScore);

@@ -34,12 +34,11 @@ public class EnemyGroupSpawner : MonoBehaviour {
 
     private void LoadNextLevelIfAllEnemiesAreDead()
     {
-        if(GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0 && GameObject.FindGameObjectsWithTag("EnemyBoss").Length <= 0)
         {
-            //Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel() + ". Spawning boss " + bossSpawnerPrefab.ToString());
-            //var bossSpawner = Instantiate(bossSpawnerPrefab, transform.position, Quaternion.identity);
-            //bossSpawner.transform.SetParent(gameObject.transform, false);
-            LevelController.instance.LoadNextLevel();
+            Debug.Log("All Enemies are dead in " + LevelController.instance.GetCurrentLevel() + ". Spawning boss " + bossSpawnerPrefab.ToString());
+            var bossSpawner = Instantiate(bossSpawnerPrefab, transform.position, Quaternion.identity);
+            bossSpawner.transform.SetParent(gameObject.transform, false);
         }
     }
 

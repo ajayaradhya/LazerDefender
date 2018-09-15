@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float movementYOffset = 1f;
     [SerializeField] float padding = 1f;
     [SerializeField] float paddingTop = 3f;
+    [SerializeField] float clickDelay = 0.3f;
 
     [Header("Lazer Related")]
     [SerializeField] GameObject playerLazer;
@@ -28,10 +29,15 @@ public class Player : MonoBehaviour {
 
     [SerializeField] Slider playerHealthBar;
 
+    [SerializeField] GameObject shieldPrefab;
+
 
     float xMin, xMax, yMin, yMax;
     Coroutine fireCoroutine;
     float currentHealth;
+
+    float clicked = 0;
+    float clicktime = 0;
 
     // Use this for initialization
     void Start () {
@@ -79,14 +85,44 @@ public class Player : MonoBehaviour {
 
     private void Fire()
     {
-        if(Input.GetButtonDown("Fire1") )
+        if(Input.GetButtonDown("Fire1"))
         {
+            if(isDoubleClick())
+            {
+                if(shieldPrefab != null)
+                {
+                    if (GameObject.FindObjectsOfType<Shield>().Length == 0)
+                    {
+                        var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
+                        shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
+                        Destroy(shield, 5f);
+                    }
+
+                         
+                }
+            }
+
             fireCoroutine = StartCoroutine(FireContinuously());
         }
         if (Input.GetButtonUp("Fire1"))
         {
             StopCoroutine(fireCoroutine);
         }
+    }
+
+    bool isDoubleClick()
+    {
+        clicked++;
+        if (clicked == 1) clicktime = Time.time;
+
+        if (clicked > 1 && Time.time - clicktime < clickDelay)
+        {
+            clicked = 0;
+            clicktime = 0;
+            return true;
+        }
+        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+        return false;
     }
 
     IEnumerator FireContinuously()
@@ -126,6 +162,25 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider)
     {
         var damageDealer = collider.GetComponent<DamageDealer>();
+
+        if (GameObject.FindGameObjectsWithTag("PlayerShield").Length != 0)
+        {
+            if (damageDealer != null)
+            {
+                var enemy = collider.gameObject.GetComponent<Enemy>();
+
+                if (enemy != null && !string.Equals(enemy.tag, "EnemyBoss"))
+                {
+                    enemy.Die();
+                    damageDealer.Hit();
+                }
+
+                
+            }
+
+            return;
+        }
+        
         currentHealth -= damageDealer.GetDamage();
         PlayerPrefs.SetFloat("Health", currentHealth);
 
@@ -135,7 +190,6 @@ public class Player : MonoBehaviour {
         {
             if (collider.gameObject.GetComponent<Enemy>() == null)
             {
-                Debug.Log("hitting boss. Killing player.");
                 currentHealth = 0;
                 UpdatePlayerHealth();
                 return;

@@ -10,6 +10,10 @@ TagManager:
   - CurrentScore
   - FinalScore
   - HighScore
+  - PlayerShield
+  - ShieldText
+  - LevelTransitionAnim
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX
