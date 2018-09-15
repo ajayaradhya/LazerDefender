@@ -1166,6 +1166,11 @@ Prefab:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 94733304}
+    - target: {fileID: 114876059149466942, guid: 8df217453c63de74abb1fdad323b1175,
+        type: 2}
+      propertyPath: clickDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8df217453c63de74abb1fdad323b1175, type: 2}
   m_IsPrefabAsset: 0
