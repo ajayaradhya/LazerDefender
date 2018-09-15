@@ -125,7 +125,28 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log("Player hit..");
         var damageDealer = collider.GetComponent<DamageDealer>();
+
+        if (GameObject.FindGameObjectsWithTag("PlayerShield").Length != 0)
+        {
+            Debug.Log("Shield found. Not taking this damage.");
+
+            if (damageDealer != null)
+            {
+                var enemy = collider.gameObject.GetComponent<Enemy>();
+
+                if (enemy != null)
+                {
+                    enemy.Die();
+                }
+
+                damageDealer.Hit();
+            }
+
+            return;
+        }
+        
         currentHealth -= damageDealer.GetDamage();
         PlayerPrefs.SetFloat("Health", currentHealth);
 
