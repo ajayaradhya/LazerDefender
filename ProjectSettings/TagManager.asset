@@ -11,6 +11,7 @@ TagManager:
   - FinalScore
   - HighScore
   - PlayerShield
+  - ShieldText
   layers:
   - Default
   - TransparentFX

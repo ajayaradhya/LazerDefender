@@ -98,7 +98,6 @@ public class EnemyBoss : MonoBehaviour {
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
         Destroy(gameObject);
         ScoreHandler.instance.UpdateScoreBy(scoreGainedByPlayerAfterEnemyDeath);
-        Debug.Log("boss is dead");
         LevelController.instance.LoadNextLevel();
     }
 

@@ -52,8 +52,8 @@ public class LevelController : MonoBehaviour {
     private void LoadStartMenuByInstance()
     {
         currentSceneIndex = 0;
-
-        if(allScenes == null && allScenes.Length ==0)
+        ShieldCountHandler.Instance.ResetShields();
+        if (allScenes == null && allScenes.Length ==0)
         {
             allScenes = GetAllScenes();
         }
@@ -64,12 +64,12 @@ public class LevelController : MonoBehaviour {
     private void LoadFirstLevelByInstance()
     {
         currentSceneIndex = 1;
+        ShieldCountHandler.Instance.UpdateShieldCountInUI();
         SceneManager.LoadScene(allScenes[currentSceneIndex]);
     }
 
     public void LoadNextLevel()
     {
-        Debug.Log("load next level :" + currentSceneIndex);
         try
         {
             currentSceneIndex++;
@@ -79,7 +79,8 @@ public class LevelController : MonoBehaviour {
                 currentSceneIndex = allScenes.Length - 2;
             }
 
-            Debug.Log("loading :" + allScenes[currentSceneIndex]);
+            ShieldCountHandler.Instance.UpdateShieldCountInUI();
+            Debug.Log("Laoding Scene : " + allScenes[currentSceneIndex]);
             SceneManager.LoadScene(allScenes[currentSceneIndex]);
         }
         catch (Exception ex)

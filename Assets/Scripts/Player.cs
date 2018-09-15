@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float movementYOffset = 1f;
     [SerializeField] float padding = 1f;
     [SerializeField] float paddingTop = 3f;
+    [SerializeField] float clickDelay = 0.3f;
 
     [Header("Lazer Related")]
     [SerializeField] GameObject playerLazer;
@@ -37,7 +38,6 @@ public class Player : MonoBehaviour {
 
     float clicked = 0;
     float clicktime = 0;
-    float clickdelay = 0.5f;
 
     // Use this for initialization
     void Start () {
@@ -89,7 +89,6 @@ public class Player : MonoBehaviour {
         {
             if(isDoubleClick())
             {
-                Debug.Log("double click recorded..");
                 if(shieldPrefab != null)
                 {
                     var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
@@ -111,7 +110,7 @@ public class Player : MonoBehaviour {
         clicked++;
         if (clicked == 1) clicktime = Time.time;
 
-        if (clicked > 1 && Time.time - clicktime < clickdelay)
+        if (clicked > 1 && Time.time - clicktime < clickDelay)
         {
             clicked = 0;
             clicktime = 0;
@@ -157,13 +156,10 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Player hit..");
         var damageDealer = collider.GetComponent<DamageDealer>();
 
         if (GameObject.FindGameObjectsWithTag("PlayerShield").Length != 0)
         {
-            Debug.Log("Shield found. Not taking this damage.");
-
             if (damageDealer != null)
             {
                 var enemy = collider.gameObject.GetComponent<Enemy>();
@@ -188,7 +184,6 @@ public class Player : MonoBehaviour {
         {
             if (collider.gameObject.GetComponent<Enemy>() == null)
             {
-                Debug.Log("hitting boss. Killing player.");
                 currentHealth = 0;
                 UpdatePlayerHealth();
                 return;

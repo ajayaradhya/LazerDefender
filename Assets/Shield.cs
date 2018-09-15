@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour {
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    void Start()
     {
-        Debug.Log("Shield hit..");
+        if (ShieldCountHandler.Instance.GetCurrentShieldCount() > 0)
+        {
+            ShieldCountHandler.Instance.UseUpOneShield();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
