@@ -170,6 +170,11 @@ public class Player : MonoBehaviour {
 
             return;
         }
+
+        if (!string.Equals(collider.gameObject.tag, "EnemyBoss"))
+        {
+            damageDealer.Hit();
+        }
     }
 
     private void UpdatePlayerHealth()
