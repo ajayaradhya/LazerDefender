@@ -87,42 +87,19 @@ public class Player : MonoBehaviour {
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            if(isDoubleClick())
-            {
-                if(shieldPrefab != null)
-                {
-                    if (GameObject.FindObjectsOfType<Shield>().Length == 0)
-                    {
-                        var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
-                        shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
-                        Destroy(shield, 5f);
-                    }
-
-                         
-                }
-            }
-
             fireCoroutine = StartCoroutine(FireContinuously());
+
+            //if (GameObject.FindObjectsOfType<Shield>().Length == 0)
+            //{
+            //    var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
+            //    shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
+            //    Destroy(shield, 5f);
+            //}
         }
         if (Input.GetButtonUp("Fire1"))
         {
             StopCoroutine(fireCoroutine);
         }
-    }
-
-    bool isDoubleClick()
-    {
-        clicked++;
-        if (clicked == 1) clicktime = Time.time;
-
-        if (clicked > 1 && Time.time - clicktime < clickDelay)
-        {
-            clicked = 0;
-            clicktime = 0;
-            return true;
-        }
-        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
-        return false;
     }
 
     IEnumerator FireContinuously()
