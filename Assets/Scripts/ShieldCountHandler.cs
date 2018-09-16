@@ -6,6 +6,7 @@ public class ShieldCountHandler : MonoBehaviour {
 
     [SerializeField] int numberOfShields = 5;
     [SerializeField] int currentShieldCount;
+    [SerializeField] GameObject shieldPrefab;
 
     public static ShieldCountHandler Instance = null;
 
@@ -58,10 +59,21 @@ public class ShieldCountHandler : MonoBehaviour {
         {
             GameObject.FindGameObjectWithTag("ShieldText").GetComponent<TMPro.TextMeshProUGUI>().text = currentShieldCount.ToString();
         }
+    }
 
-        //for(var i = 0; i < numberOfShields - currentShieldCount; i++)
-        //{
-        //    Destroy(instantiatedShields[instantiatedShields.Count - i - 1]);
-        //}
+    public void CreateShield()
+    {
+        if (GameObject.FindObjectsOfType<Shield>().Length == 0)
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if(player == null)
+            {
+                Debug.Log("Player not found");
+                return;
+            }
+            var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
+            shield.transform.SetParent(player.transform, false);
+            Destroy(shield, 5f);
+        }
     }
 }
