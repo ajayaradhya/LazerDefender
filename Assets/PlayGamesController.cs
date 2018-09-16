@@ -5,20 +5,20 @@ using System;
 
 public class PlayGamesController : MonoBehaviour
 {
-    private bool isAuthenticated = false;
+    [SerializeField] GameObject leaderBoardUI;
+
+    private static bool isAuthenticated = false;
 
     // Use this for initialization
     void Start()
     {
         DontDestroyOnLoad(this);
-
         try
         {
             PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
             PlayGamesPlatform.InitializeInstance(config);
             PlayGamesPlatform.DebugLogEnabled = true;
             PlayGamesPlatform.Activate();
-            GameObject.FindGameObjectWithTag("LoginStatus").GetComponent<TMPro.TextMeshProUGUI>().text = "not connected";
             SignIn();
         }
         catch (Exception ex)
@@ -32,33 +32,29 @@ public class PlayGamesController : MonoBehaviour
         Debug.Log("Sign in called..");
         Social.localUser.Authenticate((bool success) => {
             isAuthenticated = success;
-            GameObject.FindGameObjectWithTag("LoginStatus").GetComponent<TMPro.TextMeshProUGUI>().text = "success : " + success.ToString();
+
+            if (isAuthenticated)
+            {
+                GameObject.FindGameObjectWithTag("GooglePlayUserName").GetComponent<TMPro.TextMeshProUGUI>().text = Social.localUser.userName;
+            }
         });
     }
 
-    public void AddScoreToLeaderBoard(string leaderBoard, int score)
+    public static void AddScoreToLeaderBoard(string leaderBoard, int score)
     {
-        if (isAuthenticated)
+        Debug.Log("adding to leaderboard " + score);
+        if (Social.localUser.authenticated)
         {
             Social.ReportScore(score, leaderBoard, success => { });
         }
-        else
-        {
-            Debug.Log("Not signed in yet");
-        }
-
     }
 
     public void ShowLeaderBoard()
     {
-        if (isAuthenticated)
+        Debug.Log("showing leaderboard..");
+        if (Social.localUser.authenticated)
         {
             Social.ShowLeaderboardUI();
         }
-        else
-        {
-            Debug.Log("Not signed in yet");
-        }
-
     }
 }

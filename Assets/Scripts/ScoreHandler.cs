@@ -69,6 +69,7 @@ public class ScoreHandler : MonoBehaviour
             {
                 scoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
             }
+            PlayGamesController.AddScoreToLeaderBoard(GPGSIds.leaderboard_highest_scorers, PlayerPrefs.GetInt("HighScore"));
         }
     }
 
