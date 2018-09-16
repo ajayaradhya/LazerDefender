@@ -88,13 +88,6 @@ public class Player : MonoBehaviour {
         if(Input.GetButtonDown("Fire1"))
         {
             fireCoroutine = StartCoroutine(FireContinuously());
-
-            //if (GameObject.FindObjectsOfType<Shield>().Length == 0)
-            //{
-            //    var shield = Instantiate(shieldPrefab, shieldPrefab.transform.position, Quaternion.identity);
-            //    shield.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform, false);
-            //    Destroy(shield, 5f);
-            //}
         }
         if (Input.GetButtonUp("Fire1"))
         {
@@ -151,8 +144,6 @@ public class Player : MonoBehaviour {
                     enemy.Die();
                     damageDealer.Hit();
                 }
-
-                
             }
 
             return;
@@ -163,7 +154,7 @@ public class Player : MonoBehaviour {
 
         UpdatePlayerHealth();
 
-        if (collider.gameObject.tag == "Enemy")
+        if (string.Equals(collider.gameObject.tag, "Enemy"))
         {
             if (collider.gameObject.GetComponent<Enemy>() == null)
             {
@@ -174,12 +165,11 @@ public class Player : MonoBehaviour {
             else
             {
                 collider.gameObject.GetComponent<Enemy>().Die();
+                damageDealer.Hit();
             }
 
             return;
         }
-
-        damageDealer.Hit();
     }
 
     private void UpdatePlayerHealth()
