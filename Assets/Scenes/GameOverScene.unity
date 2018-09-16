@@ -1527,7 +1527,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Play Again
+  m_text: Start Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e9055f4cff0502441b7cd3b4d9b38353, type: 2}
   m_sharedMaterial: {fileID: 21257243233581210, guid: e9055f4cff0502441b7cd3b4d9b38353,
