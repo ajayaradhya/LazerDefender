@@ -16,6 +16,8 @@ TagManager:
   - EnemyBoss
   - LoginStatus
   - GooglePlayUserName
+  - PlayButton
+  - PauseButton
   layers:
   - Default
   - TransparentFX

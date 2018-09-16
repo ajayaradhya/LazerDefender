@@ -234,8 +234,6 @@
      <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
      <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
      <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
-     <Compile Include="Assets\GPGSIds.cs" />
-     <Compile Include="Assets\PlayGamesController.cs" />
      <Compile Include="Assets\Scripts\AdManager.cs" />
      <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
      <Compile Include="Assets\Scripts\BossSpawner.cs" />
@@ -248,11 +246,13 @@
      <Compile Include="Assets\Scripts\EnemyPathing.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\GameLoader.cs" />
+     <Compile Include="Assets\Scripts\GPGSIds.cs" />
      <Compile Include="Assets\Scripts\LazerSpinner.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
      <Compile Include="Assets\Scripts\MusicController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerLazer.cs" />
+     <Compile Include="Assets\Scripts\PlayGamesController.cs" />
      <Compile Include="Assets\Scripts\ScoreHandler.cs" />
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\ShieldCountHandler.cs" />

@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour {
 
     [SerializeField] float delayBeforeScreenLoad = 1f;
     public static LevelController instance = null;
     [SerializeField] int currentSceneIndex = 0;
-
     [SerializeField] string[] allScenes;
+
+    private bool isPaused = false;
 
     void Awake()
     {
@@ -29,6 +31,7 @@ public class LevelController : MonoBehaviour {
 
     void Start()
     {
+        isPaused = false;
         allScenes = GetAllScenes();
         currentSceneIndex = 0;
     }
@@ -127,5 +130,32 @@ public class LevelController : MonoBehaviour {
     public string GetCurrentLevel()
     {
         return allScenes[currentSceneIndex];
+    }
+
+    public void TogglePause()
+    {
+        var playButton = GameObject.FindGameObjectWithTag("PlayButton");
+        var pauseButton = GameObject.FindGameObjectWithTag("PauseButton");
+
+        if (isPaused)
+        {
+            isPaused = false;
+            if (playButton != null && pauseButton != null)
+            {
+                playButton.GetComponent<Image>().enabled = false;
+                pauseButton.GetComponent<Image>().enabled = true;
+            }
+            Time.timeScale = 1.0f;
+        }
+        else
+        {
+            isPaused = true;
+            if (playButton != null && pauseButton != null)
+            {
+                pauseButton.GetComponent<Image>().enabled = false;
+                playButton.GetComponent<Image>().enabled = true;
+            }
+            Time.timeScale = 0f;
+        }
     }
 }
