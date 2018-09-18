@@ -83,7 +83,7 @@ public class LevelController : MonoBehaviour {
             }
 
             ShieldCountHandler.Instance.UpdateShieldCountInUI();
-            Debug.Log("Laoding Scene : " + allScenes[currentSceneIndex]);
+            Debug.Log("Loading Scene : " + allScenes[currentSceneIndex]);
             SceneManager.LoadScene(allScenes[currentSceneIndex]);
         }
         catch (Exception ex)

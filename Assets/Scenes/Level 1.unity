@@ -1574,6 +1574,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 395a6782e35c08d46a3b1f844645295e,
         type: 2}
+    - target: {fileID: 114436615973423004, guid: fac886935ac9f95498000f1a950becd9,
+        type: 2}
+      propertyPath: bossSpawnerPrefab
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac886935ac9f95498000f1a950becd9, type: 2}
   m_IsPrefabAsset: 0

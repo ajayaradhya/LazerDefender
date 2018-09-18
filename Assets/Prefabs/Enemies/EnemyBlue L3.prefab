@@ -113,8 +113,8 @@ MonoBehaviour:
   blastSoundVolume: 0.75
   health: 200
   shotCounter: 0
-  minTimeBetweenShots: 0.3
-  maxTimebetweenShots: 0.8
+  minTimeBetweenShots: 0.8
+  maxTimebetweenShots: 4
   healthBarOffsetY: 0.4
   scoreGainedByPlayerAfterEnemyDeath: 20
 --- !u!212 &212351288315902626

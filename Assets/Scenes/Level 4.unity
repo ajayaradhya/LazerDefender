@@ -1280,7 +1280,7 @@ Prefab:
         type: 2}
       propertyPath: bossSpawnerPrefab
       value: 
-      objectReference: {fileID: 1527502077633106, guid: 012b8c21fb5652c428b4187f1fb7c2de,
+      objectReference: {fileID: 1527502077633106, guid: e9aec744869dee54186ada8522d42b91,
         type: 2}
     - target: {fileID: 114436615973423004, guid: fac886935ac9f95498000f1a950becd9,
         type: 2}
@@ -1390,6 +1390,16 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: f4401782390b7534a9c691b81426bd1f,
         type: 2}
+    - target: {fileID: 114436615973423004, guid: fac886935ac9f95498000f1a950becd9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114353340288226192, guid: fac886935ac9f95498000f1a950becd9,
+        type: 2}
+      propertyPath: bossSpawnerPrefab
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac886935ac9f95498000f1a950becd9, type: 2}
   m_IsPrefabAsset: 0

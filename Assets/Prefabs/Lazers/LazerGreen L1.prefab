@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50075638691220538}
   - component: {fileID: 114367379732723226}
   m_Layer: 11
-  m_Name: laserGreen13
+  m_Name: LazerGreen L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0ef0b462f68c04f9cb14edd30674f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 10
 --- !u!114 &114756987698909670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dda332c208f2e44392002b256b50d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lazerSpeed: 10
+  lazerSpeed: 8
   enemyLazerAudio: {fileID: 8300000, guid: 37afd7cf7ebcea64d922b45e03ce1e55, type: 3}
-  lazerSoundVolume: 0.75
+  lazerSoundVolume: 0.725
 --- !u!212 &212536201986077086
 SpriteRenderer:
   m_ObjectHideFlags: 1

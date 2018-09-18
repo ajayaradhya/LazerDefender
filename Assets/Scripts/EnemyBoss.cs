@@ -94,25 +94,29 @@ public class EnemyBoss : MonoBehaviour {
 
     public void Die()
     {
-        StartCoroutine(CreateBlast(transform.position));
+        Debug.Log("Boss is dead..");
+        StartCoroutine(LoadNextLevelAfterSomeTime());
+        CreateBlast(transform.position);
         AudioSource.PlayClipAtPoint(blastAudio, Camera.main.transform.position, blastSoundVolume);
-        Destroy(gameObject);
         ScoreHandler.instance.UpdateScoreBy(scoreGainedByPlayerAfterEnemyDeath);
-        LevelController.instance.LoadNextLevel();
-    }
-
-    void OnDestroy()
-    {
+        gameObject.GetComponent<Renderer>().enabled = false;
         if (healthBar != null)
         {
             Destroy(healthBar);
         }
     }
 
-    IEnumerator CreateBlast(Vector3 position)
+    void CreateBlast(Vector3 position)
     {
         var blast = Instantiate(blastEffectPrefab, position, Quaternion.identity);
         Destroy(blast, 0.5f);
-        yield return new WaitForSeconds(1f);
+    }
+
+    IEnumerator LoadNextLevelAfterSomeTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Changing level..");
+        Destroy(gameObject);
+        LevelController.instance.LoadNextLevel();
     }
 }

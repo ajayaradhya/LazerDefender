@@ -1363,7 +1363,7 @@ Prefab:
         type: 2}
       propertyPath: bossSpawnerPrefab
       value: 
-      objectReference: {fileID: 1527502077633106, guid: 012b8c21fb5652c428b4187f1fb7c2de,
+      objectReference: {fileID: 1527502077633106, guid: 3a8bda199b5a10643af432e23cd3a107,
         type: 2}
     - target: {fileID: 114436615973423004, guid: fac886935ac9f95498000f1a950becd9,
         type: 2}

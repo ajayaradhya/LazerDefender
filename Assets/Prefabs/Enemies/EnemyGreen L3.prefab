@@ -101,8 +101,8 @@ MonoBehaviour:
   blastSoundVolume: 0.75
   health: 400
   shotCounter: 0
-  minTimeBetweenShots: 0.5
-  maxTimebetweenShots: 2
+  minTimeBetweenShots: 0.8
+  maxTimebetweenShots: 4
   healthBarOffsetY: 0.4
   scoreGainedByPlayerAfterEnemyDeath: 20
 --- !u!114 &114699047562796672
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0ef0b462f68c04f9cb14edd30674f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 200
+  damage: 40
 --- !u!212 &212668575335313444
 SpriteRenderer:
   m_ObjectHideFlags: 1

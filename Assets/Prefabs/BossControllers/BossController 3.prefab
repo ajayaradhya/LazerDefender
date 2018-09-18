@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4290254037982974}
   - component: {fileID: 114942397652925644}
   m_Layer: 0
-  m_Name: BossController 0
+  m_Name: BossController 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f3588b2d70f8b45b7a299caf7453f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossEnemyPrefab: {fileID: 1712785756742502, guid: 806d607dad9a542478a3d4791381ee9c,
+  bossEnemyPrefab: {fileID: 1712785756742502, guid: 80de0a796ac50f1408b0abe66a960b8c,
     type: 2}
   positionYToSpawn: 10
-  bossPathPrefab: {fileID: 1279374012115774, guid: d01ce3e42d68c724183098a5ebb4deeb,
+  bossPathPrefab: {fileID: 1831965277980018, guid: 4fa37d091e11cc24ba889e49855918a4,
     type: 2}
   movementSpeed: 10

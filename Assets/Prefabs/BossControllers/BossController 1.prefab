@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f3588b2d70f8b45b7a299caf7453f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossEnemyPrefab: {fileID: 1712785756742502, guid: 806d607dad9a542478a3d4791381ee9c,
+  bossEnemyPrefab: {fileID: 1712785756742502, guid: b12474a28f125b54fa005f85a74fccc6,
     type: 2}
   positionYToSpawn: 10
   bossPathPrefab: {fileID: 1279374012115774, guid: 73a6093ef3103164c89417b652ff0b58,
     type: 2}
-  movementSpeed: 10
+  movementSpeed: 4
