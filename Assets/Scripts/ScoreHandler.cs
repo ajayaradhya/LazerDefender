@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
@@ -31,17 +32,17 @@ public class ScoreHandler : MonoBehaviour
 
     private static void UpdateScore()
     {
-        if (PlayerPrefs.GetInt("HighScore") == default(int))
+        if (PlayerPrefs.GetInt("NewHighScore") == default(int))
         {
-            PlayerPrefs.SetInt("HighScore", 0);
+            PlayerPrefs.SetInt("NewHighScore", 0);
         }
 
-        var currentHighScoreInMemory = PlayerPrefs.GetInt("HighScore");
+        var currentHighScoreInMemory = PlayerPrefs.GetInt("NewHighScore");
         var currentGameScore = PlayerPrefs.GetInt("Score");
 
         if (currentHighScoreInMemory < currentGameScore)
         {
-            PlayerPrefs.SetInt("HighScore", currentGameScore);
+            PlayerPrefs.SetInt("NewHighScore", currentGameScore);
         }
 
         if (GameObject.FindGameObjectsWithTag("CurrentScore").Length > 0)
@@ -67,9 +68,9 @@ public class ScoreHandler : MonoBehaviour
             var scoreText = GameObject.FindGameObjectsWithTag("HighScore")[0].GetComponent<TMPro.TextMeshProUGUI>();
             if (scoreText != null)
             {
-                scoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
+                scoreText.text = PlayerPrefs.GetInt("NewHighScore").ToString();
             }
-            PlayGamesController.AddScoreToLeaderBoard(GPGSIds.leaderboard_highest_scorers, PlayerPrefs.GetInt("HighScore"));
+            PlayGamesController.AddScoreToLeaderBoard(GPGSIds.leaderboard_top_defenders, PlayerPrefs.GetInt("NewHighScore"));
         }
     }
 
