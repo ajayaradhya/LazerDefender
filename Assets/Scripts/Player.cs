@@ -11,7 +11,6 @@ public class Player : MonoBehaviour {
     [SerializeField] float movementYOffset = 1f;
     [SerializeField] float padding = 1f;
     [SerializeField] float paddingTop = 3f;
-    [SerializeField] float clickDelay = 0.3f;
 
     [Header("Lazer Related")]
     [SerializeField] GameObject playerLazer;

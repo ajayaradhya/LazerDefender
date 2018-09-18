@@ -1423,7 +1423,7 @@ Prefab:
     - target: {fileID: 114353340288226192, guid: fac886935ac9f95498000f1a950becd9,
         type: 2}
       propertyPath: waveConfigs.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4852520673166444, guid: fac886935ac9f95498000f1a950becd9, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1560,7 +1560,7 @@ Prefab:
     - target: {fileID: 114353340288226192, guid: fac886935ac9f95498000f1a950becd9,
         type: 2}
       propertyPath: timeBetweenSpawns
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114353340288226192, guid: fac886935ac9f95498000f1a950becd9,
         type: 2}

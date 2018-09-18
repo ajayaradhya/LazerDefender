@@ -9,12 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c02b04c4157a4a4cb9105ec0ce82cf9, type: 3}
-  m_Name: GroupWave 7
+  m_Name: GroupWave L3-P5
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1178259382316570, guid: 18aeaf33227564f4390ab1150a1db255,
+  enemyPrefab: {fileID: 1755662413518202, guid: 701b8c25adc267f418efb1c540953d55,
     type: 2}
-  pathPrefab: {fileID: 1279374012115774, guid: c445405dfde270442bdd90b273a6b52a, type: 2}
+  pathPrefab: {fileID: 1279374012115774, guid: 09447faa5c8294e4799382571e0e2463, type: 2}
   timeBetweenSpawns: 0
-  spawnRandomFactor: 0
   numberOfEnemies: 0
-  moveSpeed: 4.5
+  moveSpeed: 3.5
