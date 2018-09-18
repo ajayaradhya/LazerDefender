@@ -19,17 +19,16 @@ public class Player : MonoBehaviour {
     [Header("Player Health and Death")]
     [SerializeField] float maxHealth = 200;
     [SerializeField] TMPro.TextMeshProUGUI healthText;
-
     [SerializeField] AudioClip playerDeathAudio;
     [SerializeField] [Range(0, 1)] float soundVolume = 0.75f;
-
     [SerializeField] GameObject playerBlastPrefab;
     [SerializeField] float afterDeathTimeScale = 0.5f;
-
     [SerializeField] Slider playerHealthBar;
+    [SerializeField] float screenShakeTimeOnHit = 0.5f;
+    [SerializeField] float screenShakeTimeOnDeath = 0.75f;
+
 
     [SerializeField] GameObject shieldPrefab;
-
 
     float xMin, xMax, yMin, yMax;
     Coroutine fireCoroutine;
@@ -150,6 +149,7 @@ public class Player : MonoBehaviour {
         
         currentHealth -= damageDealer.GetDamage();
         PlayerPrefs.SetFloat("Health", currentHealth);
+        CameraShake.ShakeCameraFor(screenShakeTimeOnHit);
 
         UpdatePlayerHealth();
 
@@ -199,6 +199,7 @@ public class Player : MonoBehaviour {
     private void Die()
     {
         PlayerPrefs.DeleteKey("Health");
+        CameraShake.ShakeCameraFor(screenShakeTimeOnDeath - screenShakeTimeOnHit);
         Time.timeScale = afterDeathTimeScale;
         AudioSource.PlayClipAtPoint(playerDeathAudio, Camera.main.transform.position, soundVolume);
         Instantiate(playerBlastPrefab, transform.position, Quaternion.identity);

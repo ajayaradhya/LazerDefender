@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363453337409508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: -4.37, z: 0}
+  m_LocalPosition: {x: 0, y: -2.61, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
   playerLazer: {fileID: 1502395440926648, guid: 19a0b4a1f39c76746991563af461feda,
     type: 2}
   periodOfContinuousFiring: 0.1
-  maxHealth: 400
+  maxHealth: 200
   healthText: {fileID: 0}
   playerDeathAudio: {fileID: 8300000, guid: 7aebbe08dd5f6504b872058779835bc3, type: 3}
   soundVolume: 0.75
@@ -234,6 +234,8 @@ MonoBehaviour:
     type: 2}
   afterDeathTimeScale: 0.3
   playerHealthBar: {fileID: 0}
+  screenShakeTimeOnHit: 0.2
+  screenShakeTimeOnDeath: 0.5
   shieldPrefab: {fileID: 1404563453793874, guid: 508b2bf416eee974689c7ff77961efd7,
     type: 2}
 --- !u!212 &212308803938553602
